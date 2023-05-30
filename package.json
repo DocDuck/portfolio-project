@@ -4,6 +4,7 @@
   "description": "all frontend stuff",
   "main": "index.js",
   "scripts": {
+    "start": "webpack",
     "test": "test"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/DocDuck/portfolio-project/issues"
   },
-  "homepage": "https://github.com/DocDuck/portfolio-project#readme"
+  "homepage": "https://github.com/DocDuck/portfolio-project#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.1",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
 }
