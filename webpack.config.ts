@@ -1,34 +1,20 @@
-import path from 'path';
-import { Configuration, ProgressPlugin } from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path'
+import { Configuration } from 'webpack'
+import { BuildOptions, buildWebpackConfig } from './config/build'
 
-const config: Configuration = {
-	mode: "production",
-	entry: path.resolve(__dirname, 'src', 'index.ts'),
-	module: {
-		rules: [
-			{
-				test: /\.tsx?$/,
-				use: 'ts-loader',
-				exclude: /node_modules/,
-			},
-		]
-	},
-	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
-	},
-	output: {
-		filename: '[name].[contenthash].js',
-		path: path.resolve(__dirname, 'build'),
-		clean: true
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Frontend portfolio',
-			template: path.resolve(__dirname, 'public', 'index.html')
-		}),
-		new ProgressPlugin(),
-	],
-};
+const mode = 'production' as BuildOptions['mode']; // TODO from .env
+const isDev = mode === 'development';
 
-export default config;
+const options: BuildOptions = {
+	mode,
+	isDev,
+	paths: {
+		entry: path.resolve(__dirname, 'src', 'index.ts'),
+		ouptut: path.resolve(__dirname, 'build'),
+		template: path.resolve(__dirname, 'public', 'index.html')
+	}
+}
+
+const config: Configuration = buildWebpackConfig(options)
+
+export default config
