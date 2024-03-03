@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-project",
+  "version": "1.0.0",
+  "description": "all frontend stack is here!",
+  "main": "index.js",
+  "repository": "https://github.com/DocDuck/portfolio-project.git",
+  "author": "Aleksandr Mitin <alex.mitin.psmu@gmail.com>",
+  "license": "MIT"
+}
