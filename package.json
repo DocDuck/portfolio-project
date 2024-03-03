@@ -7,9 +7,10 @@
   "author": "Aleksandr Mitin <alex.mitin.psmu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack && node ./build/main.js"
+    "start": "webpack && open ./build/index.html"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   }

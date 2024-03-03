@@ -1,5 +1,6 @@
 const testFn = () => {
-    console.log('Hello World!');
+    const element = document.getElementById('root');
+    element.innerHTML = "Hello world!";
 }
 
 testFn();
