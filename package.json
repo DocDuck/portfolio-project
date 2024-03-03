@@ -6,6 +6,9 @@
   "repository": "https://github.com/DocDuck/portfolio-project.git",
   "author": "Aleksandr Mitin <alex.mitin.psmu@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack && node ./build/main.js"
+  },
   "devDependencies": {
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
