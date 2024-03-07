@@ -6,6 +6,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
 	const { entry, ouptut } = paths;
   return {
     mode,
+    devtool: 'inline-source-map',
     entry,
     module: {
       rules: buildLoaders(),

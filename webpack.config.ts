@@ -2,7 +2,7 @@ import path from 'path'
 import { Configuration } from 'webpack'
 import { BuildOptions, buildWebpackConfig } from './config/build'
 
-const mode = 'production' as BuildOptions['mode']; // TODO from .env
+const mode = 'development' as BuildOptions['mode']; // TODO from .env
 const isDev = mode === 'development';
 
 const options: BuildOptions = {
