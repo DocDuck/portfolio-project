@@ -8,11 +8,11 @@ import {
 } from '.'
 
 export const buildWebpackConfig = (options: BuildOptions): Configuration => {
-	const { mode, paths, port } = options;
+	const { mode, paths, isDev } = options;
 	const { entry, ouptut } = paths;
   return {
-    devtool: 'inline-source-map',
-    devServer: buildDevServer(options),
+    devtool: isDev ? 'inline-source-map' : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined,
     entry,
     mode,
     module: {

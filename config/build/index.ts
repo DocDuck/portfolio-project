@@ -4,4 +4,4 @@ export { buildPlugins } from './buildPlugins'
 export { buildResolvers } from './buildResolvers'
 export { buildWebpackConfig } from './buildWebpackConfig'
 
-export { BuildOptions, Configuration } from './types/config'
+export { BuildEnv, BuildOptions, Configuration } from './types/config'

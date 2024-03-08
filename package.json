@@ -7,7 +7,9 @@
   "author": "Aleksandr Mitin <alex.mitin.psmu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --open"
+    "start": "webpack serve --env port=3000 --open",
+    "build:dev": "webpack --env mode=development",
+    "build:propd": "webpack --env mode=production"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
