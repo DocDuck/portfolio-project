@@ -1,17 +1,29 @@
-import { Configuration } from "webpack"
-import { BuildOptions, buildLoaders, buildPlugins, buildResolvers } from '.'
+import {
+  BuildOptions,
+  buildLoaders,
+  buildPlugins,
+  buildResolvers,
+  buildDevServer,
+  Configuration
+} from '.'
 
 export const buildWebpackConfig = (options: BuildOptions): Configuration => {
-	const { mode, paths } = options;
+	const { mode, paths, port } = options;
 	const { entry, ouptut } = paths;
   return {
-    mode,
     devtool: 'inline-source-map',
+    devServer: buildDevServer(options),
     entry,
+    mode,
     module: {
       rules: buildLoaders(),
     },
     resolve: buildResolvers(),
+    performance: {
+      hints: false,
+      maxAssetSize: 512000,
+      maxEntrypointSize: 512000,
+    },
     output: {
       filename: '[name].[contenthash].js',
       path: ouptut,
