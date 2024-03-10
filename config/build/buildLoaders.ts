@@ -16,7 +16,15 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         // Generate css only for production build
         isDev ? "style-loader" : miniCssLoader,
         // Translates CSS into CommonJS
-        "css-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: {
+              auto: (path: string) => path.includes('.module.'),
+              localIdentName: isDev ? '[path][local]--[hash:base64:5]' : '[hash:base64:8]'
+            },
+          }
+        },
         // Compiles Sass to CSS
         "sass-loader",
       ],
