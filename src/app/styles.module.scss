@@ -1,7 +1,23 @@
+@import "../styles/theme/aquamarine.scss";
+@import "../styles/theme/darcula.scss";
+@import "../styles/theme/nord.scss";
 .app {
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 32px;
+    font: var(--font-m);
+    background-color: var(--main-bg-color);
+    color: var(--text);
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--link-color);
+        &:hover {
+            color: var(--link-color-hover);
+        }
+    }
 }
 
 .links {
