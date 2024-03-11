@@ -1,16 +1,21 @@
-import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Suspense, lazy, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import cn from "classnames";
+import { useTheme } from '../theme/useTheme';
 import "../styles/index.scss"
 import s from "./styles.module.scss"
 
 const Home = lazy(() => import('../pages/home'));
 const About = lazy(() => import('../pages/about'));
 
-const App = () => (
-  <div className={cn(s.app, "nord")}>
-    <Router>
+const App = () => {
+
+  const { onToggleTheme, theme } = useTheme()
+
+  return (
+    <div className={cn(s.app, theme)}>
       <div className={s.links}>
+        <button onClick={onToggleTheme}>{ theme }</button>
         <Link to="/">to Home</Link>
         <Link to="/about">to About</Link>
       </div>
@@ -20,9 +25,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
         </Routes>
       </Suspense>
-    </Router>
-  </div>
-);
+    </div>
+  )
+};
 
 App.displayName = "App"
 

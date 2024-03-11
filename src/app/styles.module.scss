@@ -1,6 +1,7 @@
 @import "../styles/theme/aquamarine.scss";
-@import "../styles/theme/darcula.scss";
+@import "../styles/theme/dracula.scss";
 @import "../styles/theme/nord.scss";
+@import "../styles/theme/space-gray.scss";
 .app {
     height: 100vh;
     width: 100vw;
@@ -18,12 +19,27 @@
             color: var(--link-color-hover);
         }
     }
+    button {
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 4px;
+        color: var(--button-text);
+        background-color: var(--button-color);
+        &:hover {
+            color: var(--button-text-hover);
+            background-color: var(--button-color-hover);
+        } 
+    }
 }
 
 .links {
     display: flex;
+    align-items: center;
     margin-bottom: 16px;
-    a + a {
-        margin-left: 8px;
+    > * {
+        margin-right: 8px;
+    }
+    :last-child {
+        margin-right: 0;
     }
 }
