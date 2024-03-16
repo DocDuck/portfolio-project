@@ -1,14 +1,13 @@
-import { Suspense, lazy, useState } from 'react';
+import { Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import cn from "classnames";
-import { useTheme } from '../theme/useTheme';
-import "../styles/index.scss"
+import { cn } from '../../shared/lib/class-names';
+import { useTheme } from '../../shared/theme/hooks/useTheme';
+import { About } from '../../pages/about/ui';
+import { Home } from '../../pages/home/ui';
+import "./styles/index.scss"
 import s from "./styles.module.scss"
 
-const Home = lazy(() => import('../pages/home'));
-const About = lazy(() => import('../pages/about'));
-
-const App = () => {
+export const App = () => {
 
   const { onToggleTheme, theme } = useTheme()
 
@@ -30,5 +29,3 @@ const App = () => {
 };
 
 App.displayName = "App"
-
-export default App;
