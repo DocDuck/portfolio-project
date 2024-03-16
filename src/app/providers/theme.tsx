@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps } from "../lib/ThemeContext"
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps } from "shared/theme/lib/ThemeContext"
 
 type Props = {
 	children?: React.ReactNode
@@ -21,3 +21,5 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
 			{children}
 		</ThemeContext.Provider>)
 }
+
+ThemeProvider.displayName = "ThemeProvider"
