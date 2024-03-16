@@ -12,6 +12,7 @@ export interface BuildPath {
   entry: string;
   ouptut: string;
   template: string;
+  src: string
 }
 
 
