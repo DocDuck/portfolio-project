@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { cn } from '../../shared/lib/class-names';
-import { useTheme } from '../../shared/theme/hooks/useTheme';
-import { About } from '../../pages/about/ui';
-import { Home } from '../../pages/home/ui';
+
+import { cn } from 'shared/lib/class-names';
+import { useTheme } from 'shared/theme';
+import { About } from 'pages/about/ui';
+import { Home } from 'pages/home/ui';
 import "./styles/index.scss"
 import s from "./styles.module.scss"
 
