@@ -1,6 +1,10 @@
 @import "reset";
-@import "variables/global.scss";
-@import "../../../shared/theme/ui/styles/aquamarine.scss";
-@import "../../../shared/theme/ui/styles/dracula.scss";
-@import "../../../shared/theme/ui/styles/nord.scss";
-@import "../../../shared/theme/ui/styles/space-gray.scss";
+@import "global";
+
+@import "../../../shared/theme/ui/styles/defaults/transparent.scss";
+
+@import "../../../shared/theme/ui/styles/palette/aquamarine";
+@import "../../../shared/theme/ui/styles/palette/dracula";
+@import "../../../shared/theme/ui/styles/palette/nord";
+@import "../../../shared/theme/ui/styles/palette/space-gray";
+

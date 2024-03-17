@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: var(--padding-l) var(--padding-xl);
+    background: var(--transparency-dark-25);
+    border-bottom: 1px solid var(--transparency-light-15);
+    width: 100%;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-s);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    .link:not(:last-child) {
+        margin-right: var(--padding-m);
+    }
+}

@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
-
-import { cn } from 'shared/lib/class-names';
 import { Router } from 'app/providers';
+import { NavBar } from 'widgets/nav-bar/NavBar';
+import { cn } from 'shared/lib/class-names';
 import { useTheme } from 'shared/theme';
-import "./styles/index.scss"
-import s from "./styles.module.scss"
+import s from "./app.module.scss"
 
 export const App: React.FC = () => {
 
@@ -12,12 +10,11 @@ export const App: React.FC = () => {
 
   return (
     <div className={cn(s.app, theme)}>
-      <div className={s.links}>
-        <button onClick={onToggleTheme}>{ theme }</button>
-        <Link to="/">to Home</Link>
-        <Link to="/about">to About</Link>
+      <NavBar />
+      <div className={s.content}>
+        <button onClick={onToggleTheme}>{theme}</button>
+        <Router />
       </div>
-      <Router />
     </div>
   )
 };

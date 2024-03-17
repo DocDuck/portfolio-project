@@ -9,4 +9,15 @@
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+    --header-size: 50px;
+
+    --padding-xl: 32px;
+    --padding-l: 16px;
+    --padding-m: 8px;
+    --padding-s: 4px;
+
+    // Button
+    --button-pading: var(--padding-m) var(--padding-l);
+    --button-border-radius: 4px
+
 }
