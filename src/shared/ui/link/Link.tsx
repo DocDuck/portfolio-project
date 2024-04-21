@@ -11,5 +11,5 @@ interface ILinkProps extends LinkProps {
 
 export const Link: React.FC<ILinkProps> = (props) => {
     const { to, className = "", children, ...rest } = props;  
-    return <L to={to} className={cn(s.link, { [className]: className })} {...rest}>{ children }</L>;
+    return <L to={to} className={cn(s.link, { [className]: !!className })} {...rest}>{ children }</L>;
 };
