@@ -1,0 +1,21 @@
+.sidebar {
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.colapsed {
+    width: 80px;
+}
+
+.toggler {
+    width: 24px;
+    height: 24px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}

@@ -11,10 +11,9 @@ export const App: React.FC = () => {
 
   return (
     <div className={cn(s.app, theme)}>
-      <Navbar />
-      <div className={s.content}>
-        <Router />
-      </div>
+      <Navbar className={s.navbar}/>
+      <Sidebar className={s.sidebar} />
+      <Router className={s.page} />
     </div>
   )
 };

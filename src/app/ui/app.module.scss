@@ -1,4 +1,10 @@
 .app {
+    display: grid;
+    grid-template-areas:
+        "navbar navbar navbar navbar"
+        "sidebar page page page";
+    grid-template-columns: min-content auto auto auto;
+    grid-template-rows: min-content auto;
     height: 100vh;
     width: 100vw;
     font: var(--font-m);
@@ -16,8 +22,14 @@
         } 
     }
 }
-
-.content {
+.navbar {
+    grid-area: navbar;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.page {
+    grid-area: page;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
