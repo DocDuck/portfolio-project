@@ -9,12 +9,8 @@
     height: var(--header-size);
 }
 
-.switcher {
-    padding: var(--padding-s);
-    margin-right: var(--padding-l);
-}
-
 .link {
+    margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -14,7 +14,6 @@ export const ThemeSwitcher: React.FC<IProps> = ({ className = '' }) => {
     return (
         <Button className={cn(s.themeSwitcher, { [className]: !!className })} onClick={onToggleTheme}>
             <ThemeIcon />
-            {theme}
         </Button>
     )
 }

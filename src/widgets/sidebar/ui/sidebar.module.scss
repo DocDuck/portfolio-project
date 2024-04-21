@@ -1,4 +1,6 @@
 .sidebar {
+    background: var(--transparency-dark-25);
+    border-right: 1px solid var(--transparency-light-15);
     width: 300px;
     position: relative;
     display: flex;
@@ -18,4 +20,14 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+}
+
+.controls {
+    display: flex;
+    padding: var(--padding-m);
+    margin-top: auto;
+}
+
+.themeSwitcher {
+    margin-right: var(--padding-l);
 }
