@@ -11,7 +11,7 @@ export const Sidebar: React.FC<IProps> = ({ className }) => {
     
     return (
         <aside className={cn(s.sidebar, { [s.colapsed]: colapsed }, className)}>
-            <div className={s.toggler} onClick={() => setColapsed(colapsed => !colapsed)}>{'>'}</div>
+            <div className={s.toggler} onClick={() => setColapsed(colapsed => !colapsed)}>{colapsed ? '>' : '<'}</div>
             <div className={s.controls}>
                 <ThemeSwitcher className={s.themeSwitcher} />
             </div>

@@ -5,5 +5,6 @@ export const buildDevServer = (options: BuildOptions): Configuration => ({
     port: options.port,
     open: true,
     compress: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: options.isDev
 })
