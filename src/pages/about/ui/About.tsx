@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export const About: React.FC = () => {
-    return <div>About</div>
+    const { t } = useTranslation();
+    return <div>{t("О сайте")}</div>
 }
 About.displayName = "About"
 

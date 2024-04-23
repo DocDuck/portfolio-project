@@ -7,7 +7,6 @@ interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const Button: React.FC<IProps> = (props) => {
     const { mode = 'clear', className, children, ...restProps } = props;
-    console.log(s[mode])
     return (
         <button className={cn(s.button, s[mode], { [className]: !!className })} {...restProps}>
             {children}

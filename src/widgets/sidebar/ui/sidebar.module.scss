@@ -24,11 +24,11 @@
 }
 
 .controls {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: var(--padding-m);
     margin-top: auto;
-}
-
-.themeSwitcher {
-    margin-right: var(--padding-l);
+    overflow: hidden;
 }
