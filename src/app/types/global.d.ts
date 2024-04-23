@@ -5,7 +5,7 @@ declare module "*.scss" {
   const classNames: IClassNames;
   export = classNames;
 }
-  
+// svg and file loaders
 declare module "*.jpg"
 declare module "*.jpeg"
 declare module "*.png"
@@ -14,3 +14,5 @@ declare module "*.svg" {
   const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
   export default SVG;
 }
+// webpack define plugin variable envs
+declare const IS_DEV: boolean;
