@@ -6,7 +6,7 @@ export const LanguageSwitcher: React.FC = () => {
     const onChangeLanguage = () => i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
     return (
         <Button onClick={onChangeLanguage}>
-            {t("Перевод")}
+            {t("Язык")}
         </Button>
     )
 }
