@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { routerPath } from "shared/config/router";
 import { Link } from "shared/ui/link";
-import s from "./navbar.module.scss"
+import s from "./navbar.module.scss";
 import { cn } from "shared/lib/class-names";
 
 interface IProps {
-    className: string;
+  className: string;
 }
 export const Navbar: React.FC<IProps> = ({ className }) => {
 	const { t } = useTranslation();
@@ -17,5 +17,5 @@ export const Navbar: React.FC<IProps> = ({ className }) => {
 			</div>
 		</div>
 	);
-}
-Navbar.displayName = "Navbar"
+};
+Navbar.displayName = "Navbar";

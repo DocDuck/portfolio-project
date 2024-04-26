@@ -5,7 +5,7 @@ import { ThemeProvider } from 'app/providers';
 import 'app/ui/styles/index.scss';
 import 'shared/config/i18n';
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')!);
 root.render(
 	<Router>
 		<ThemeProvider>

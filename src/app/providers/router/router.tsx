@@ -7,19 +7,19 @@ interface IProps {
 }
 
 export const Router: React.FC<IProps> = ({ className = "" }) => (
-    <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-            {Object.values(routes).map(({ element, path }) => (
-                <Route
-                    key={path}
-                    element={
-                        (<div className={className}>{element}</div>)
-                    }
-                    path={path}
-                />        
-            ))}
-        </Routes>
-    </Suspense>
-)
+	<Suspense fallback={<div>Loading...</div>}>
+		<Routes>
+			{Object.values(routes).map(({ element, path }) => (
+				<Route
+					key={path}
+					element={
+						(<div className={className}>{element}</div>)
+					}
+					path={path}
+				/>        
+			))}
+		</Routes>
+	</Suspense>
+);
 
-Router.displayName = "Router"
+Router.displayName = "Router";

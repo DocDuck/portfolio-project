@@ -4,8 +4,8 @@ export enum Route {
 }
 
 export const routerPath: Record<Route, string> = {
-    [Route.ABOUT]: '/about',
-    [Route.HOME]: '/'
-}
+	[Route.ABOUT]: '/about',
+	[Route.HOME]: '/'
+};
 
 export type RouterPath = typeof routerPath
