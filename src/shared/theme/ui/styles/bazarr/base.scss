@@ -6,9 +6,6 @@ html {
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
     color: var(--text);
 }
 
@@ -74,8 +71,8 @@ h6,
     border-left: 2px solid var(--transparency-light-10);
 }
 
-.bazarr-Navbar-root[class*="bazarr-"] .bazarr-Stack-root a [class*="bazarr-"]:hover:not(.bazarr-Badge-light):not(.bazarr-Badge-inner),
-.bazarr-Navbar-root[class*="bazarr-"] .bazarr-Stack-root [class*="bazarr-"]:hover:not(.bazarr-Badge-light):not(.bazarr-Badge-inner) {
+.bazarr-Navbar-root[class*="bazarr-"] .bazarr-Stack-root a [class*="bazarr-"]:hover:not(.bazarr-Badge-light, .bazarr-Badge-inner),
+.bazarr-Navbar-root[class*="bazarr-"] .bazarr-Stack-root [class*="bazarr-"]:hover:not(.bazarr-Badge-light, .bazarr-Badge-inner) {
     color: rgb(var(--accent-color));
     background: transparent;
 }
@@ -190,7 +187,7 @@ h6,
 input:checked+[class*="bazarr-"] {
     background-color: rgb(var(--accent-color)) !important;
     border-color: rgb(var(--accent-color)) !important;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     transition: color 150ms ease 0s;
 }
 
@@ -234,7 +231,7 @@ input:checked+[class*="bazarr-"] {
 }
 
 .bazarr-UnstyledButton-root[class*="bazarr-"]:hover {
-    box-shadow: rgb(0 0 0 / 5%) 0px 1px 3px, rgb(0 0 0 / 5%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 3px, rgb(0 0 0 / 5%) 0 20px 25px -5px, rgb(0 0 0 / 4%) 0 10px 10px -5px;
     border: 1px solid rgb(var(--accent-color));
 }
 
@@ -396,7 +393,7 @@ textarea:focus-within,
 /* DROPDOWNS */
 
 .bazarr-Select-dropdown {
-    background: rgba(255, 0, 0, 0.283);
+    background: rgb(255 0 0 / 28.3%);
 }
 
 .bazarr-Paper-root.bazarr-Menu-body[class*="bazarr-"],
@@ -454,7 +451,7 @@ textarea:focus-within,
 
 .bazarr-Paper-root.bazarr-Modal-modal[class*="bazarr-"] {
     color: var(--text);
-    box-shadow: rgb(0 0 0 / 5%) 0px 1px 3px, rgb(0 0 0 / 5%) 0px 28px 23px -7px, rgb(0 0 0 / 4%) 0px 12px 12px -7px;
+    box-shadow: rgb(0 0 0 / 5%) 0 1px 3px, rgb(0 0 0 / 5%) 0 28px 23px -7px, rgb(0 0 0 / 4%) 0 12px 12px -7px;
     background: var(--modal-bg-color);
 }
 

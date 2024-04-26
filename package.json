@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --env port=3000 --open",
-    "lint": "eslint src/**/*.{ts,tsx} --fix",
+    "eslint": "eslint src/**/*.{ts,tsx} --fix",
+    "stylelint": "stylelint **/*.scss --fix",
     "build:dev": "webpack --env mode=development",
     "build:propd": "webpack --env mode=production"
   },
@@ -30,6 +31,8 @@
     "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
+    "stylelint": "^16.4.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",

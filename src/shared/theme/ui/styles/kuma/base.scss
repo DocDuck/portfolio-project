@@ -1,37 +1,38 @@
 /* @import url("/css/defaults/placeholders.css"); */
-@import url("/css/defaults/transparent.css");
-  *:not(#floatingInput)::-webkit-input-placeholder {
+@import "/css/defaults/transparent.css";
+
+  *:not(#floatingInput)::input-placeholder {
     color: var(--text-muted) !important;
   }
   
-  *:not(#floatingInput):focus::-webkit-input-placeholder {
+  *:not(#floatingInput):focus::input-placeholder {
     color: var(--text-hover) !important;
   }
   
   /* Firefox < 19 */
-  *:not(#floatingInput):-moz-placeholder {
+  *:not(#floatingInput):placeholder {
     color: var(--text-muted) !important;
   }
   
-  *:not(#floatingInput):focus:-moz-placeholder {
+  *:not(#floatingInput):focus:placeholder {
     color: var(--text-hover) !important;
   }
   
   /* Firefox > 19 */
-  *:not(#floatingInput)::-moz-placeholder {
+  *:not(#floatingInput)::placeholder {
     color: var(--text-muted) !important;
   }
   
-  *:not(#floatingInput):focus::-moz-placeholder {
+  *:not(#floatingInput):focus::placeholder {
     color: var(--text-hover) !important;
   }
   
   /* Internet Explorer 10 */
-  *:not(#floatingInput):-ms-input-placeholder {
+  *:not(#floatingInput):input-placeholder {
     color: var(--text-muted) !important;
   }
   
-  *:not(#floatingInput):focus:-ms-input-placeholder {
+  *:not(#floatingInput):focus:input-placeholder {
     color: var(--text-hover) !important;
   }
 
@@ -49,11 +50,8 @@ body,
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
 
 /* TEXT */
@@ -123,7 +121,7 @@ mark,
 .shadow-box,
 .dark .shadow-box,
 .dark .shadow-box:not(.alert) {
-    box-shadow: 0px 0px 20px 10px #0000001a;
+    box-shadow: 0 0 20px 10px #0000001a;
     background: var(--transparency-dark-25);
 }
 
@@ -175,6 +173,7 @@ td {
 .dark .table-hover>tbody>tr:hover,
 .table-hover>tbody>tr:hover {
     --bs-table-accent-bg: var(--transparency-dark-20);
+
     color: var(--text);
 }
 
@@ -185,6 +184,7 @@ td {
 
 .dark .table-hover>tbody>tr:hover>* {
     --bs-table-accent-bg: var(--transparency-dark-15);
+
     color: var(--text-hover);
 }
 
@@ -228,7 +228,7 @@ td {
 .dark header,
 #app>div>header {
     background: var(--transparency-dark-15) !important;
-    border-bottom-color: rgba(255, 255, 255, 0) !important;
+    border-bottom-color: rgb(255 255 255 / 0%) !important;
 }
 
 /* BUTTONS */
@@ -256,7 +256,7 @@ td {
     color: var(--button-text-hover);
     background-color: var(--button-color-hover);
     border-color: var(--button-color-hover);
-    box-shadow: 0 0 0 .25rem rgba(var(--accent-color), .5)
+    box-shadow: 0 0 0 .25rem rgb(var(--accent-color) .5)
 }
 
 .btn-check:checked+.btn-primary,
@@ -274,7 +274,7 @@ td {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .25rem rgba(var(--accent-color), .5)
+    box-shadow: 0 0 0 .25rem rgb(var(--accent-color) .5)
 }
 
 .btn-primary:disabled,
@@ -300,7 +300,7 @@ td {
 
 .btn-check:focus+.btn-outline-primary,
 .btn-outline-primary:focus {
-    box-shadow: 0 0 0 .25rem rgba(var(--accent-color), .5);
+    box-shadow: 0 0 0 .25rem rgb(var(--accent-color) .5);
 }
 
 .btn-check:checked+.btn-outline-primary,
@@ -318,7 +318,7 @@ td {
 .btn-outline-primary:active:focus,
 .btn-outline-primary.active:focus,
 .btn-outline-primary.dropdown-toggle.show:focus {
-    box-shadow: 0 0 0 .25rem rgba(var(--accent-color), .5);
+    box-shadow: 0 0 0 .25rem rgb(var(--accent-color) .5);
 }
 
 .btn-outline-primary:disabled,
@@ -340,8 +340,8 @@ td {
     background-color: var(--button-color) !important;
 }
 
-.dark #importBackup[data-v-d684482e]:hover:not(:disabled):not([readonly])::file-selector-button,
-#importBackup[data-v-d684482e]:hover:not(:disabled):not([readonly])::file-selector-button {
+.dark #importBackup[data-v-d684482e]:hover:not(:disabled, [readonly])::file-selector-button,
+#importBackup[data-v-d684482e]:hover:not(:disabled, [readonly])::file-selector-button {
     color: var(--button-text-hover) !important;
     background-color: var(--button-color-hover) !important;
 }
@@ -361,16 +361,16 @@ td {
 .form-select:focus {
     color: var(--text-color);
     background: var(--drop-down-menu-bg);
-    box-shadow: 0 0 0 0.25rem rgba(var(--accent-color), 0.25);
-    border-color: rgba(var(--accent-color), 0.25);
+    box-shadow: 0 0 0 0.25rem rgb(var(--accent-color) 0.25);
+    border-color: rgb(var(--accent-color) 0.25);
 }
 
 .dark .form-control:focus,
 .form-control:focus {
     color: var(--text-color);
     background: var(--transparency-dark-35);
-    box-shadow: 0 0 0 0.25rem rgba(var(--accent-color), 0.25);
-    border-color: rgba(var(--accent-color), 0.25);
+    box-shadow: 0 0 0 0.25rem rgb(var(--accent-color) 0.25);
+    border-color: rgb(var(--accent-color) 0.25);
 }
 
 .dark .form-control,
@@ -391,7 +391,7 @@ td {
     border-color: var(--button-color);
 }
 
-.form-check-input[type=checkbox]:indeterminate {
+.form-check-input[type="checkbox"]:indeterminate {
     background-color: var(--button-color);
     border-color: var(--button-color);
 }
@@ -412,13 +412,13 @@ td {
     color: var(--label-text-color) !important;
 }
 
-.multiselect__option--highlight:after {
+.multiselect__option--highlight::after {
     content: attr(data-select);
     background: rgb(var(--accent-color)) !important;
     color: var(--label-text-color);
 }
 
-.multiselect__option--selected:after {
+.multiselect__option--selected::after {
     content: attr(data-selected);
     color: var(--label-text-color) !important;
 }
@@ -465,9 +465,6 @@ td {
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
 }
 
 .dark .modal-footer,
@@ -479,9 +476,6 @@ td {
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
 }
 
 .dark .modal-content,
@@ -492,22 +486,16 @@ td {
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
 }
 
 .vue-image-crop-upload .vicp-wrap {
-    -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 23%);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 23%);
     box-shadow: 0 1px 3px rgb(0 0 0 / 23%);
     background-color: var(--modal-bg-color);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
     background-position: center center, center center;
     background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
 }
 
 /* SETTINGS */
@@ -520,8 +508,8 @@ td {
     background: var(--transparency-light-10) !important;
 }
 
-h5.settings-subheading:after,
-.settings-subheading.h5:after {
+h5.settings-subheading::after,
+.settings-subheading.h5::after {
     border-bottom: 1px solid var(--transparency-light-10);
 }
 
@@ -530,15 +518,15 @@ h5.settings-subheading:after,
     border-bottom: 1px solid var(--transparency-light-10) !important;
 }
 
-[contenteditable=true] {
+[contenteditable="true"] {
     background-color: var(--transparency-dark-25);
 }
 
-[contenteditable=true]:hover {
+[contenteditable="true"]:hover {
     background-color: var(--transparency-dark-35);
 }
 
-[dir=ltr] .sidebar .sidebar-footer {
+[dir="ltr"] .sidebar .sidebar-footer {
     border-right: 1px solid var(--transparency-light-10) !important;
     left: 0;
 }
@@ -549,16 +537,18 @@ h5.settings-subheading:after,
 }
 
 .item:hover {
-    background-color: rgb(var(--accent-color), .10) !important;
+    background-color: rgb(var(--accent-color) .10) !important;
 }
 
-@media (max-width: 550px) {
+@media (width <= 550px) {
     .dark .table-shadow-box tbody .shadow-box {
         background-color: transparent !important;
     }
 
     .dark .table-hover>tbody>tr:hover>* {
-        --bs-table-accent-bg: transparent color: var(--text-hover);
+        --bs-table-accent-bg: transparent;
+
+ color: var(--text-hover)
     }
 
     .dark .table-shadow-box tbody .shadow-box td {
@@ -570,7 +560,7 @@ h5.settings-subheading:after,
 .dark .monitor-list .item.active,
 .monitor-list .item.active,
 .monitor-list .item:hover {
-    background-color: rgb(var(--accent-color), .10);
+    background-color: rgb(var(--accent-color) .10);
 }
 
 .active.dropdown-item.active,

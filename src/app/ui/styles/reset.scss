@@ -1,4 +1,4 @@
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
 }
@@ -30,7 +30,7 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote::before, blockquote::after, q::before, q::after {
   content: '';
   content: none;
 }
@@ -42,7 +42,6 @@ table {
 
 input {
   appearance: none;
-  -webkit-appearance: none;
   border-radius: 0;
 }
 

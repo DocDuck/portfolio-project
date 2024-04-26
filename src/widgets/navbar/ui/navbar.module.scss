@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     margin-left: auto;
+
     .link:not(:last-child) {
         margin-right: var(--padding-m);
     }
