@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export const ThemeSwitcher: React.FC<IProps> = ({ className = '' }) => {
-    const { theme, onToggleTheme } = useTheme();
+    const { onToggleTheme } = useTheme();
 
     return (
         <Button className={cn(s.themeSwitcher, { [className]: !!className })} onClick={onToggleTheme}>
