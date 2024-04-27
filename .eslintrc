@@ -1,0 +1,9 @@
+{
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["plugin:i18next/recommended"],
+  "rules": {
+    "i18next/no-literal-string": 2
+  }
+}
