@@ -3,5 +3,7 @@
     "Язык": "English",
     "На главную": "To Home",
     "На страницу О сайте": "To About",
-    "Страница не найдена": "Page not found"
+    "Страница не найдена": "Page not found",
+    "Что-то пошло не так... Попробуйте перезагрузить страницу": "Something went wrong... Try to reolad page",
+    "Перезагрузить страницу": "Reload page"
 }
