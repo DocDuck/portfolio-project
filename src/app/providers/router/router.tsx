@@ -4,7 +4,7 @@ import { routes } from './routes';
 import { PageLoader } from 'widgets/page-loader/ui';
 
 interface IProps {
-    className: string;
+  className: string;
 }
 
 export const Router: React.FC<IProps> = ({ className = "" }) => (
