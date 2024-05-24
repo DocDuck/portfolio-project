@@ -1,12 +1,16 @@
 import { WebpackPluginInstance, ProgressPlugin, DefinePlugin } from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { BuildOptions } from './types/config'
 
 export const buildPlugins = ({ paths: { template }, isDev }: BuildOptions): WebpackPluginInstance[] => [
     new HtmlWebpackPlugin({
         title: 'Frontend portfolio',
         template
+    }),
+    new BundleAnalyzerPlugin({
+        openAnalyzer: false
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
