@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/class-names";
+import { cn } from "shared/lib/classNames";
 import s from "./sidebar.module.scss";
 import { useState } from "react";
 import { ThemeSwitcher } from "widgets/theme-switcher/ui";

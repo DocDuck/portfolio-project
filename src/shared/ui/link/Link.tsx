@@ -1,5 +1,5 @@
 import { Link as L, LinkProps } from "react-router-dom";
-import { cn } from "shared/lib/class-names";
+import { cn } from "shared/lib/classNames";
 import { Route, RouterPath } from "shared/config/router";
 import s from "./link.module.scss";
 

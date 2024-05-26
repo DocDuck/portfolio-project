@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/class-names";
+import { cn } from "shared/lib/classNames";
 import s from "./button.module.scss";
 
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

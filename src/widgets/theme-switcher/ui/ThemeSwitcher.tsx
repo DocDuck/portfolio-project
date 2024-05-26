@@ -1,4 +1,4 @@
-import { cn } from "shared/lib/class-names";
+import { cn } from "shared/lib/classNames";
 import { useTheme } from "shared/theme";
 import { Button } from "shared/ui/button";
 import ThemeIcon from "shared/assets/icons/theme.svg";
