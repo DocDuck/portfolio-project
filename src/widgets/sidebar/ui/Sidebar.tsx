@@ -12,7 +12,13 @@ export const Sidebar: React.FC<IProps> = ({ className }) => {
 
 	return (
 		<aside data-testid="sidebar" className={cn(s.sidebar, { [s.colapsed]: colapsed }, className)}>
-			<div className={s.toggler} onClick={() => setColapsed(colapsed => !colapsed)}>{colapsed ? '>' : '<'}</div>
+			<div
+				data-testid="sidebar-toggle-btn"
+				className={s.toggler}
+				onClick={() => setColapsed(colapsed => !colapsed)}
+			>
+				{colapsed ? '>' : '<'}
+			</div>
 			<div className={s.controls}>
 				<ThemeSwitcher className={s.themeSwitcher} />
 				<LanguageSwitcher />

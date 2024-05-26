@@ -1,14 +1,16 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
+import { renderWithTranslation } from "shared/lib/tests";
 import { Sidebar } from "widgets/sidebar/ui";
 
 describe('Sidebar', () => {
 	test('render', () => {
-		render(<Sidebar />);
+		renderWithTranslation(<Sidebar />);
 		expect(screen.getByTestId("sidebar")).toBeInTheDocument();
-  });
-  // test('clear mode', () => {
-	// 	render(<Button mode="clear">TEST</Button>);
-  //   expect(screen.getByText("TEST")).toHaveClass('clear');
-  //   screen.debug()
-	// });
+	});
+	test('toggle', () => {
+		renderWithTranslation(<Sidebar />);
+		const btn = screen.getByTestId("sidebar-toggle-btn");
+		fireEvent.click(btn);
+		expect(screen.getByTestId("sidebar")).toHaveClass('colapsed');
+	});
 });

@@ -1,0 +1,1 @@
+export const EmptySvg: React.FC = () => (<svg />);

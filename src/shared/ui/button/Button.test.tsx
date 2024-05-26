@@ -4,10 +4,9 @@ describe('Button', () => {
 	test('render', () => {
 		render(<Button>TEST</Button>);
 		expect(screen.getByText("TEST")).toBeInTheDocument();
-  });
-  test('clear mode', () => {
+	});
+	test('clear mode', () => {
 		render(<Button mode="clear">TEST</Button>);
-    expect(screen.getByText("TEST")).toHaveClass('clear');
-    screen.debug()
+		expect(screen.getByText("TEST")).toHaveClass('clear');
 	});
 });
