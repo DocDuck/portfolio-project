@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { routes } from './routes';
-import { PageLoader } from 'widgets/page-loader/ui';
+import { PageLoader } from 'widgets/pageLoader/ui';
 
 interface IProps {
   className: string;

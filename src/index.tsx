@@ -5,8 +5,8 @@ import { App } from 'app/ui';
 import { ErrorBoundary, ThemeProvider } from 'app/providers';
 import 'app/ui/styles/index.scss';
 import 'shared/config/i18n';
-import { PageError } from 'widgets/page-error';
-import { PageLoader } from 'widgets/page-loader/ui';
+import { PageError } from 'widgets/pageError';
+import { PageLoader } from 'widgets/pageLoader/ui';
 
 const root = createRoot(document.getElementById('root')!);
 root.render(
