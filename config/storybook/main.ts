@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import { getCssLoader } from "../loaders/cssLoader";
 import path from "path";
 
 const config: StorybookConfig = {
@@ -15,12 +16,25 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
+  docs: {
+    autodocs: 'tag'
+  },
   webpack(config) {
     if (!config?.resolve) return config;
     config.resolve.modules = [
       ...(config.resolve.modules || []),
       path.resolve(__dirname, "../../src"),
     ];
+    config.module?.rules?.push(getCssLoader(true))
 
     return config;
   },
