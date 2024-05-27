@@ -10,7 +10,7 @@ export const PageError: React.FC = () => {
 	return (
 		<div className={s.pageError}>
 			<div className={s.text}>{t("Что-то пошло не так... Попробуйте перезагрузить страницу")}</div>
-			<Button onClick={handleClick} mode="clear">{t("Перезагрузить страницу")}</Button>
+			<Button onClick={handleClick} mode="clean">{t("Перезагрузить страницу")}</Button>
 		</div>
 	);
 };

@@ -1,12 +1,12 @@
 import { cn } from "shared/lib/classNames";
-import s from "./button.module.scss";
+import s from "./Button.module.scss";
 
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  mode?: 'clear' | 'border' | 'filled'
+  mode?: 'clean' | 'border' | 'filled'
 }
 export const Button: React.FC<IProps> = (props) => {
-	const { mode = 'clear', className = '', children, ...restProps } = props;
+	const { mode = 'filled', className = '', children, ...restProps } = props;
 	return (
 		<button className={cn(s.button, s[mode], { [className]: !!className })} {...restProps}>
 			{children}

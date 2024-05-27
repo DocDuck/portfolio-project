@@ -5,8 +5,16 @@ describe('Button', () => {
 		render(<Button>TEST</Button>);
 		expect(screen.getByText("TEST")).toBeInTheDocument();
 	});
-	test('clear mode', () => {
-		render(<Button mode="clear">TEST</Button>);
-		expect(screen.getByText("TEST")).toHaveClass('clear');
+	test('clean mode', () => {
+		render(<Button mode="clean">TEST</Button>);
+		expect(screen.getByText("TEST")).toHaveClass('clean');
+	});
+	test('filled mode', () => {
+		render(<Button mode="filled">TEST</Button>);
+		expect(screen.getByText("TEST")).toHaveClass('filled');
+	});
+	test('border mode', () => {
+		render(<Button mode="border">TEST</Button>);
+		expect(screen.getByText("TEST")).toHaveClass('border');
 	});
 });
