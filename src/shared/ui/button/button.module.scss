@@ -15,6 +15,7 @@
     color: var(--button-color);
     border: none;
     background: none;
+
     &:hover {
         color: var(--button-color-hover);
     }
@@ -23,6 +24,7 @@
 .filled {
     border: none;
     background-color: var(--button-color);
+
     &:hover {
         background-color: var(--button-color-hover);
     }
@@ -32,6 +34,7 @@
     color: var(--button-color);
     border-color: var(--button-color);
     background: none;
+
     &:hover {
         color: var(--button-color-hover);
         border-color: var(--button-color-hover);
