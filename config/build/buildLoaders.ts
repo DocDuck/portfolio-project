@@ -1,29 +1,15 @@
 import { RuleSetRule } from 'webpack'
 import { BuildOptions } from '.'
 import { getCssLoader } from '../loaders/cssLoader';
+import { getSvgLoader } from '../loaders/svgLoader';
+import { getFileLoader } from '../loaders/fileLoader';
+import { getTypescriptLoader } from '../loaders/typescriptLoader';
 
 export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  }
-  
+  const typescriptLoader = getTypescriptLoader();
   const cssLoader = getCssLoader(isDev);
-
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
-    use: [
-      {
-        loader: 'file-loader',
-      },
-    ],
-  }
-
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  }
+  const fileLoader = getFileLoader();
+  const svgLoader = getSvgLoader();
 
   return [
     typescriptLoader,
