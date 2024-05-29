@@ -1,6 +1,8 @@
+import path from "path";
+import { RuleSetRule } from "webpack";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { getCssLoader } from "../loaders/cssLoader";
-import path from "path";
+import { getSvgLoader } from "../loaders/svgLoader";
 
 const config: StorybookConfig = {
   stories: ["../../src/**/*.mdx", "../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -17,6 +19,7 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  // staticDirs: ['../../',],
   swc: () => ({
     jsc: {
       transform: {
@@ -26,18 +29,27 @@ const config: StorybookConfig = {
       }
     }
   }),
-  docs: {
-    autodocs: 'tag'
-  },
-  webpack(config) {
+  docs: {},
+  webpackFinal: async (config) => {
     if (!config?.resolve) return config;
     config.resolve.modules = [
       ...(config.resolve.modules || []),
       path.resolve(__dirname, "../../src"),
     ];
-    config.module?.rules?.push(getCssLoader(true))
-
+    const rules = config?.module?.rules || [];
+    const pathToInlineSvg = path.resolve(__dirname, '../../src/shared/assets/icons');
+    // modify storybook's file-loader rule to avoid conflicts with svgr
+    const fileLoaderRule = rules.find((rule: RuleSetRule) => (rule.test as RegExp).test('.svg'));
+    (fileLoaderRule as RuleSetRule).exclude = pathToInlineSvg;
+    rules.push({
+      ...getSvgLoader(),
+      include: pathToInlineSvg,
+    });
+    rules.push(getCssLoader(true))
     return config;
   },
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;
