@@ -12,7 +12,7 @@ const preview: Preview = {
   },
 
   decorators: [
-    ThemeDecorator,
+    ThemeDecorator, // TODO этот декоратор работает не стабильно со сторибуком и совсем не дружит с локи. Пришлось руками править сорсы где падает на проверке массива с классНеймами тем
     StyleDecorator,
     RouterDecorator
   ],
