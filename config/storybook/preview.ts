@@ -1,5 +1,5 @@
-import type { Preview, ReactRenderer } from "@storybook/react";
-import { StyleDecorator, ThemeDecorator } from "shared/ui/storybook";
+import type { Preview } from "@storybook/react";
+import { RouterDecorator, StyleDecorator, ThemeDecorator } from "shared/ui/storybook";
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +13,7 @@ const preview: Preview = {
   decorators: [
     ThemeDecorator,
     StyleDecorator,
+    RouterDecorator
   ]
 };
 

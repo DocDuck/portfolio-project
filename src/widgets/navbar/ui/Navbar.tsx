@@ -5,12 +5,12 @@ import s from "./navbar.module.scss";
 import { cn } from "shared/lib/classNames";
 
 interface IProps {
-  className: string;
+  className?: string;
 }
-export const Navbar: React.FC<IProps> = ({ className }) => {
+export const Navbar: React.FC<IProps> = ({ className = "" }) => {
 	const { t } = useTranslation();
 	return (
-		<div className={cn(s.navbar, className)}>
+		<div className={cn(s.navbar, {[className]: !!className})}>
 			<div className={s.links}>
 				<Link className={s.link} to={routerPath.home}>{t("На главную")}</Link>
 				<Link className={s.link} to={routerPath.about}>{t("На страницу О сайте")}</Link>
