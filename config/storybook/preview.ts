@@ -10,11 +10,14 @@ const preview: Preview = {
       },
     },
   },
+
   decorators: [
     ThemeDecorator,
     StyleDecorator,
     RouterDecorator
-  ]
+  ],
+
+  tags: ["autodocs"]
 };
 
 export default preview;
