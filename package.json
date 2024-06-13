@@ -14,6 +14,7 @@
     "build:propd": "webpack --env mode=production",
     "test:jest": "jest --config ./config/jest/jest.config.ts",
     "test:loki": "loki test --config ./config/storybook",
+    "test:loki:update": "loki update --config ./config/storybook",
     "storybook:run": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },

@@ -1,5 +1,7 @@
 import type { Preview } from "@storybook/react";
+import { Theme } from "shared/theme";
 import { RouterDecorator, StyleDecorator, ThemeDecorator } from "shared/ui/storybook";
+import { themeGlobalTypes } from "shared/ui/storybook/ThemeDecorator";
 
 const preview: Preview = {
   parameters: {
@@ -12,12 +14,13 @@ const preview: Preview = {
   },
 
   decorators: [
-    ThemeDecorator, // TODO этот декоратор работает не стабильно со сторибуком и совсем не дружит с локи. Пришлось руками править сорсы где падает на проверке массива с классНеймами тем
+    ThemeDecorator,
     StyleDecorator,
     RouterDecorator
   ],
 
-  tags: ["autodocs"]
+  tags: ["autodocs"],
+  globalTypes: themeGlobalTypes
 };
 
 export default preview;
