@@ -1,36 +1,34 @@
-name: react-ci
-run-name: linters, tests, build
+name: linting, testing, building
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
-  strategy:
-    matrix:
-      node-version: [ 20.11.* ]
-  check-bats-version:
+  pipeline:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 20.11.x ]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
+      - name: Install modules
         run: npm install
-
-      - name: Build production
+      - name: Build production project
         run: npm run build:prod
-
-      - name: Run TS linter
+      - name: Linting typescript
         run: npm run lint:ts
-
-      - name: Run SCSS linter
+      - name: Linting css
         run: npm run lint:scss
-
-      - name: Run Jest tests
+      - name: Jest testing
         run: npm run test:jest
+      - name: Build storybook
+        run: npm run storybook:build
+      - name: Loki screenshot testing in storybook
+        run: npm run test:loki
