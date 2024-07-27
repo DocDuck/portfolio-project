@@ -1,13 +1,36 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: react-ci
+run-name: linters, tests, build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
+  strategy:
+    matrix:
+      node-version: [ 20.11.* ]
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - run: npm install -g bats
-      - run: bats -v
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build production
+        run: npm run build:prod
+
+      - name: Run TS linter
+        run: npm run lint:ts
+
+      - name: Run SCSS linter
+        run: npm run lint:scss
+
+      - name: Run Jest tests
+        run: npm run test:jest

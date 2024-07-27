@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --env port=3000 --open",
+    "lint:ts": "eslint src/**/*.{ts,tsx}",
     "lint:ts:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "lint:scss": "stylelint **/*.scss",
     "lint:scss:fix": "stylelint **/*.scss --fix",
     "build:dev": "webpack --env mode=development",
     "build:propd": "webpack --env mode=production",
