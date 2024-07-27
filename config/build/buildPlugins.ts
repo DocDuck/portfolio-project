@@ -9,9 +9,6 @@ export const buildPlugins = ({ paths: { template }, isDev }: BuildOptions): Webp
         title: 'Frontend portfolio',
         template
     }),
-    new BundleAnalyzerPlugin({
-        openAnalyzer: false
-    }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
@@ -19,5 +16,12 @@ export const buildPlugins = ({ paths: { template }, isDev }: BuildOptions): Webp
     }),
     new DefinePlugin({
         IS_DEV: isDev
-    })
+    }),
+    ...(
+        isDev ? [
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false
+            })
+        ] : []
+    )
 ]
