@@ -13,7 +13,7 @@
     "lint:scss": "stylelint **/*.scss",
     "lint:scss:fix": "stylelint **/*.scss --fix",
     "build:dev": "webpack --env mode=development",
-    "build:propd": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production",
     "test:jest": "jest --config ./config/jest/jest.config.ts",
     "test:loki": "loki test --config ./config/storybook",
     "test:loki:update": "loki update --config ./config/storybook",
