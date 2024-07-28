@@ -1,5 +1,5 @@
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
-import { Decorator } from '@storybook/react';
+import { Decorator, ReactRenderer } from '@storybook/react';
 import 'shared/theme/ui/styles/palette/aquamarine.scss';
 import 'shared/theme/ui/styles/palette/dracula.scss';
 import 'shared/theme/ui/styles/palette/nord.scss';
@@ -10,14 +10,13 @@ import { cn } from 'shared/lib/classNames';
 import { Theme } from 'shared/theme';
 
 export const ThemeDecorator: Decorator = (Story, context) => {
-	return (withThemeFromJSXProvider({
+	return (withThemeFromJSXProvider<ReactRenderer>({
 		Provider: ThemeProvider,
-	})
-		(() => (
-			<div className={cn(s.app, context.globals.theme || Theme.NORD)} style={{ justifyContent: 'center', alignItems: 'center' }}>
-				<Story />
-			</div>
-		), context))
+	})(() => (
+		<div className={cn(s.app, context.globals.theme || Theme.NORD)} style={{ justifyContent: 'center', alignItems: 'center' }}>
+			<Story />
+		</div>
+	), context));
 };
 		
 export const themeGlobalTypes = {
@@ -34,4 +33,4 @@ export const themeGlobalTypes = {
 			dynamicTitle: true,
 		},
 	}
-}
+};
