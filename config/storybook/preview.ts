@@ -1,5 +1,4 @@
 import type { Preview } from "@storybook/react";
-import { Theme } from "shared/theme";
 import { RouterDecorator, StyleDecorator, ThemeDecorator } from "shared/ui/storybook";
 import { themeGlobalTypes } from "shared/ui/storybook/ThemeDecorator";
 
