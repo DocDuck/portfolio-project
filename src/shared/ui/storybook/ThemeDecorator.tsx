@@ -13,7 +13,7 @@ export const ThemeDecorator: Decorator = (Story, context) => {
 	return (withThemeFromJSXProvider<ReactRenderer>({
 		Provider: ThemeProvider,
 	})(() => (
-		<div className={cn(s.app, context.globals.theme || Theme.NORD)} style={{ justifyContent: 'center', alignItems: 'center' }}>
+		<div className={cn(s.app, context.globals.theme as Theme || Theme.NORD)} style={{ justifyContent: 'center', alignItems: 'center' }}>
 			<Story />
 		</div>
 	), context));
