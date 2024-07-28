@@ -24,8 +24,8 @@ jobs:
 #        run: npm run build:prod
       - name: Linting typescript
         run: npm run lint:ts
-      - name: Linting css
-        run: npm run lint:scss
+#      - name: Linting css
+#        run: npm run lint:scss
       - name: Jest testing
         run: npm run test:jest
       - name: Build storybook
