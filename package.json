@@ -15,8 +15,8 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "test:jest": "jest --config ./config/jest/jest.config.ts",
-    "test:loki": "npx loki test --config ./config/storybook",
-    "test:loki:update": "npx loki update --config ./config/storybook",
+    "test:loki": "loki test --config ./config/storybook",
+    "test:loki:update": "loki update --config ./config/storybook",
     "test:loki:ci": "loki --requireReference --reactUri file:$PWD/storybook-static",
     "storybook:run": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
@@ -97,32 +97,18 @@
     ]
   },
   "loki": {
-    "chromeSelector": "#my-decorator > *",
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1366,
-        "height": 768
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
       },
       "chrome.iphone7": {
         "target": "chrome.docker",
         "preset": "iPhone 7"
-      },
-      "chrome.a4": {
-        "target": "chrome.aws-lambda",
-        "preset": "A4 Paper"
-      },
-      "ios": {
-        "target": "ios.simulator"
-      },
-      "android": {
-        "target": "android.emulator"
       }
-    }
-  },
-  "overrides": {
-    "loki": {
-      "@storybook/react": "$@storybook/react"
     }
   }
 }
