@@ -1,6 +1,5 @@
 .button {
     cursor: pointer;
-    padding: var(--button-pading);
     border: 1px solid transparent;
     border-radius: var(--button-border-radius);
     color: var(--button-text);
@@ -39,4 +38,18 @@
         color: var(--button-color-hover);
         border-color: var(--button-color-hover);
     }
+}
+
+// sizes
+.s {
+    font-size: var(--font-size-s);
+    padding: var(--button-pading-s);
+}
+.m {
+    font-size: var(--font-size-m);
+    padding: var(--button-pading-m);
+}
+.l {
+    font-size: var(--font-size-l);
+    padding: var(--button-pading-l);
 }

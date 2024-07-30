@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding-l) var(--padding-xl);
+    padding: var(--padding-m) var(--padding-xl);
     background: var(--transparency-dark-25);
     border-bottom: 1px solid var(--transparency-light-15);
     width: 100%;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--padding-s);
+    padding: var(--padding-xs);
 }
 
 .links {
@@ -23,6 +23,6 @@
     margin-left: auto;
 
     .link:not(:last-child) {
-        margin-right: var(--padding-m);
+        margin-right: var(--size-s);
     }
 }
