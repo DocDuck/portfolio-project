@@ -35,4 +35,5 @@ jobs:
         if: always()
         run: npm run storybook:build
       - name: Loki screenshot testing in storybook
+        if: always()
         run: npm run test:loki:ci
