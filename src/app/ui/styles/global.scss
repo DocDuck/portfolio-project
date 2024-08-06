@@ -1,19 +1,30 @@
 :root {
-    --font-family-main: menlo, sans-serif;  
-    --font-size-m: 16px;
-    --font-line-m: 24px;
+    --size-xs: 4;
+    --size-s: 8;
+    --size-m: 16;
+    --size-l: 24;
+    --size-xl: 32;
+    --font-family-main: menlo, sans-serif;
+    --font-size-s: calc(var(--size-s) * 1px);
+    --font-line-s: calc(var(--size-m) * 1px);
+    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);  
+    --font-size-m: calc(var(--size-m) * 1px);
+    --font-line-m: calc(var(--size-l) * 1px);
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-    --font-size-l: 24px;
-    --font-line-l: 32px;
+    --font-size-l: calc(var(--size-l) * 1px);
+    --font-line-l: calc(var(--size-xl) * 1px);
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
     --header-size: 50px;
-    --padding-xl: 32px;
-    --padding-l: 16px;
-    --padding-m: 8px;
-    --padding-s: 4px;
+    --padding-xl: calc(var(--size-xl) * 1px);
+    --padding-l: calc(var(--size-l) * 1px);
+    --padding-m: calc(var(--size-m) * 1px);
+    --padding-s: calc(var(--size-s) * 1px);
+    --padding-xs: calc(var(--size-xs) * 1px);
 
     // Button
-    --button-pading: var(--padding-m) var(--padding-l);
-    --button-border-radius: 4px;
+    --button-pading-s: var(--padding-xs) var(--padding-s);
+    --button-pading-m: var(--padding-s) var(--padding-m);
+    --button-pading-l: var(--padding-m) var(--padding-l);
+    --button-border-radius: calc(var(--size-xs) * 1px);
 
 }

@@ -15,9 +15,12 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "test:jest": "jest --config ./config/jest/jest.config.ts",
-    "test:loki": "npx loki test --config ./config/storybook",
-    "test:loki:update": "npx loki update --config ./config/storybook",
+    "test:loki": "loki test --config ./config/storybook",
+    "test:loki:update": "loki update --config ./config/storybook",
     "test:loki:ci": "loki --requireReference --reactUri file:$PWD/storybook-static",
+    "test:loki:json": "node scripts/generateLokiReport.mjs",
+    "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:loki:report": "npm run test:loki:json && npm run test:loki:html",
     "storybook:run": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -25,9 +28,9 @@
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.6",
     "@babel/preset-typescript": "^7.24.6",
-    "@chromatic-com/storybook": "^1.5.0",
-    "@eslint/eslintrc": "^3.0.2",
-    "@eslint/js": "^9.1.1",
+    "@chromatic-com/storybook": "^1.6.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
     "@storybook/addon-essentials": "^8.1.7",
     "@storybook/addon-interactions": "^8.1.7",
     "@storybook/addon-links": "^8.1.7",
@@ -65,6 +68,7 @@
     "loki": "^0.35.0",
     "mini-css-extract-plugin": "^2.8.1",
     "react-test-renderer": "^18.3.1",
+    "reg-cli": "^0.18.6",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
@@ -97,32 +101,18 @@
     ]
   },
   "loki": {
-    "chromeSelector": "#my-decorator > *",
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1366,
-        "height": 768
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
       },
       "chrome.iphone7": {
         "target": "chrome.docker",
         "preset": "iPhone 7"
-      },
-      "chrome.a4": {
-        "target": "chrome.aws-lambda",
-        "preset": "A4 Paper"
-      },
-      "ios": {
-        "target": "ios.simulator"
-      },
-      "android": {
-        "target": "android.emulator"
       }
-    }
-  },
-  "overrides": {
-    "loki": {
-      "@storybook/react": "$@storybook/react"
     }
   }
 }

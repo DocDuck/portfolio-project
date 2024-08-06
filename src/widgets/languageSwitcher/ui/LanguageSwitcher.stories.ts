@@ -18,3 +18,9 @@ type Story = StoryObj<typeof meta>;
 export const Main: Story = {
 	args: {},
 };
+
+export const Short: Story = {
+	args: {
+		isShort: true
+	},
+};
