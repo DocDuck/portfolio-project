@@ -4,3 +4,5 @@ storybook-static
 .idea
 .DS_Store
 *storybook.log
+.loki/report.html
+.loki/report.json
