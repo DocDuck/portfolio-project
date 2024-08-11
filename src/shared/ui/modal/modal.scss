@@ -1,0 +1,30 @@
+.modal {
+  background: var(--transparency-dark-15);
+  z-index: var(--modal-z-index);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+@supports (height: 100dvh) {
+  .modal{
+    height:100dvh;
+  }
+}
+
+.content {
+  border: 1px solid var(--transparency-light-15);
+  border-radius: var(--button-border-radius);
+  box-shadow:  0 1px 3px 0 rgb(0 0 0 / 23%);
+  background-color: var(--modal-bg-color);
+  background-repeat: repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: center center, center center;
+  background-size: auto, cover;
+  padding: var(--padding-m);
+}
