@@ -2,8 +2,15 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": ["plugin:i18next/recommended"],
+  "extends": [
+    "plugin:i18next/recommended"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
   "rules": {
-    "i18next/no-literal-string": 2
+    "i18next/no-literal-string": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }
