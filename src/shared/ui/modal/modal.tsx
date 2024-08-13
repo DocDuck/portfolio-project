@@ -2,7 +2,6 @@ import { MouseEvent, ReactNode, useCallback } from "react";
 import { Portal } from "shared/ui/portal";
 import "./modal.scss";
 import { cn } from "shared/lib/classNames";
-import { log } from "console";
 
 interface IModalProps {
 	children: ReactNode;
@@ -13,7 +12,6 @@ interface IModalProps {
 
 export const Modal: React.FC<IModalProps> = (props) => {
 	const { children, className = '', isOpen = false, onClose } = props;
-	console.log('isOpen', isOpen)
 	const onOutsideClick = useCallback(() => {
 		onClose && onClose();
 	}, [onClose]);

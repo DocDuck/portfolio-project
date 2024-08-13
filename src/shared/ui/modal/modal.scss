@@ -1,7 +1,7 @@
 .modal {
   opacity: 0;
   z-index: -1;
-  background: var(--transparency-dark-15);
+  background: var(--transparency-dark-50);
   position: fixed;
   top: 0;
   left: 0;
@@ -33,4 +33,9 @@
   background-position: center center, center center;
   background-size: auto, cover;
   padding: var(--padding-m);
+  transition: .3s transform;
+  transform: scale(.3);
+  .open & {
+    transform: scale(1);
+  }
 }
