@@ -18,16 +18,35 @@ export const Modal: React.FC<IModalProps> = (props) => {
 	const [isClosing, setIsClosing] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
+	/** Callbacks */
 	const onOutsideClick = useCallback(() => {
 		if (onClose) {
 			setIsClosing(true);
 			timerRef.current = setTimeout(() => {
 				setIsClosing(false);
+				document.removeEventListener("keydown", onKeydown);
 				onClose();
 			}, CLOSING_DELAY);
 		}
-	}, [onClose]);
+	}, [onClose, setIsClosing]);
+	const onKeydown = useCallback((e: KeyboardEvent) => {
+		if (e.key === "Escape") {
+			onOutsideClick();
+		}
+	}, [onOutsideClick]);
 	const onContentClick = (e: MouseEvent) => e.stopPropagation();
+
+	/** Effects */
+	useEffect(() => {
+		// Закрытие модалки на esc
+		isOpen && document.addEventListener("keydown", onKeydown);	
+		// Очищаем таймер анимации при анмаунте и обработчик клавиш
+		return () => {
+			clearTimeout(timerRef.current);
+			document.removeEventListener("keydown", onKeydown);
+		};
+	}, [isOpen]);
+
 	return (
 		<Portal>
 			<div
