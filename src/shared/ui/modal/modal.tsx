@@ -8,12 +8,13 @@ interface IModalProps {
 	className?: string;
 	isOpen?: boolean;
 	onClose?: () => void;
+	container?: Element | DocumentFragment | HTMLElement;
 }
 
 const CLOSING_DELAY = 300;
 
 export const Modal: React.FC<IModalProps> = (props) => {
-	const { children, className = '', isOpen = false, onClose } = props;
+	const { children, className = '', isOpen = false, onClose, container } = props;
 	// Блок для анимированного закрытия модалки
 	const [isClosing, setIsClosing] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -47,7 +48,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
 	}, [isOpen, onKeydown]);
 
 	return (
-		<Portal>
+		<Portal container={container}>
 			<div
 				className={cn('modal', {
 					[className]: !!className,
