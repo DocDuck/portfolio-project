@@ -14,7 +14,7 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
 
 	useEffect(() => {
 		document.body.className = theme;
-	}, []);
+	}, [theme]);
 	
 	const value = useMemo<ThemeContextProps>(() => ({
 		theme,

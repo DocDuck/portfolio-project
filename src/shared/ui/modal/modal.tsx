@@ -24,11 +24,10 @@ export const Modal: React.FC<IModalProps> = (props) => {
 			setIsClosing(true);
 			timerRef.current = setTimeout(() => {
 				setIsClosing(false);
-				document.removeEventListener("keydown", onKeydown);
 				onClose();
 			}, CLOSING_DELAY);
 		}
-	}, [onClose, setIsClosing]);
+	}, [onClose]);
 	const onKeydown = useCallback((e: KeyboardEvent) => {
 		if (e.key === "Escape") {
 			onOutsideClick();
@@ -45,7 +44,7 @@ export const Modal: React.FC<IModalProps> = (props) => {
 			clearTimeout(timerRef.current);
 			document.removeEventListener("keydown", onKeydown);
 		};
-	}, [isOpen]);
+	}, [isOpen, onKeydown]);
 
 	return (
 		<Portal>
