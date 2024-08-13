@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Main: Story = {
 	args: {
-		children: "Lorem ipsum"
+		children: "Lorem ipsum",
+		isOpen: true
 	},
 };
