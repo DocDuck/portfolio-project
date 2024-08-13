@@ -6,16 +6,17 @@ import 'shared/theme/ui/styles/palette/nord.scss';
 import 'shared/theme/ui/styles/palette/space-gray.scss';
 import s from 'app/ui/app.module.scss';
 import { ThemeProvider } from 'app/providers';
-import { cn } from 'shared/lib/classNames';
 import { Theme } from 'shared/theme';
 
 export const ThemeDecorator: Decorator = (Story, context) => {
 	return (withThemeFromJSXProvider<ReactRenderer>({
 		Provider: ThemeProvider,
 	})(() => (
-		<div className={cn(s.app, context.globals.theme as Theme || Theme.NORD)} style={{ justifyContent: 'center', alignItems: 'center' }}>
-			<Story />
-		</div>
+		<body className={context.globals.theme as Theme || Theme.NORD}>
+			<div className={s.app} style={{ justifyContent: 'center', alignItems: 'center' }}>
+				<Story />
+			</div>
+		</body>
 	), context));
 };
 		

@@ -11,7 +11,8 @@ export const useTheme = (): UseThemeResult => {
 
 	const onToggleTheme = () => {
 		const newTheme = theme === Theme.NORD ? Theme.SPACE_GRAY : Theme.NORD;
-		setTheme && setTheme(newTheme);
+		setTheme?.(newTheme);
+		document.body.className = newTheme;
 		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
 	};
 	

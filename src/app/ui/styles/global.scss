@@ -1,3 +1,9 @@
+@import "../../../shared/theme/ui/styles/defaults/transparent";
+@import "../../../shared/theme/ui/styles/palette/aquamarine";
+@import "../../../shared/theme/ui/styles/palette/dracula";
+@import "../../../shared/theme/ui/styles/palette/nord";
+@import "../../../shared/theme/ui/styles/palette/space-gray";
+
 :root {
     --size-xs: 4;
     --size-s: 8;
@@ -27,4 +33,12 @@
     --button-pading-l: var(--padding-m) var(--padding-l);
     --button-border-radius: calc(var(--size-xs) * 1px);
 
+    // Z-Index
+    --modal-z-index: 10px;
+}
+// Это нужно для правильной темизации компонентов которые порталом закинуты вне корневого класса app
+// Например модальное окно
+body {
+    color: var(--text);
+    font: var(--font-m);
 }

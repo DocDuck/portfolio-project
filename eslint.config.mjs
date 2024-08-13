@@ -24,7 +24,7 @@ export default tseslint.config(
 			'block-spacing': ['error'],
 			'indent': ['error', 'tab'],
 			'semi': ['error'],
-			'semi-spacing': ['error']
+			'semi-spacing': ['error'],
 		}
 	},
 	{
