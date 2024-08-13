@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  &.open {
+  &.isOpen {
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
@@ -35,7 +35,10 @@
   padding: var(--padding-m);
   transition: .3s transform;
   transform: scale(.3);
-  .open & {
+  .isOpen & {
     transform: scale(1);
+  }
+  .isClosing & {
+    transform: scale(.3);
   }
 }
