@@ -1,4 +1,5 @@
 .modal {
+  overflow: hidden;
   opacity: 0;
   z-index: -1;
   background: var(--transparency-dark-50);
@@ -24,10 +25,14 @@
 }
 
 .content {
+  display: block;
+  overflow: scroll;
+  max-width: 50%;
+  max-height: 50%;
   border: 1px solid var(--transparency-light-15);
   border-radius: var(--button-border-radius);
   box-shadow:  0 1px 3px 0 rgb(0 0 0 / 23%);
-  background-color: var(--modal-bg-color);
+  background: var(--modal-bg-color);
   background-repeat: repeat, no-repeat;
   background-attachment: fixed, fixed;
   background-position: center center, center center;
