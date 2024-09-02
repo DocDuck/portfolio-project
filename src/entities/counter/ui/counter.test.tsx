@@ -17,7 +17,7 @@ describe('Counter', () => {
 		expect(val).toHaveTextContent('11');
 	});
 	test('decrement', () => {
-		renderForTests(<Counter />), { preloadedState };
+		renderForTests(<Counter />, { preloadedState });
 		const btn = screen.getByTestId("test-decrement");
 		const val = screen.getByTestId("test-counter");
 		fireEvent.click(btn);
