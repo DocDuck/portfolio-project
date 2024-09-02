@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/counter/model';
+import { counterReducer } from 'entities/counter';
 
 const store = configureStore({
 	reducer: {
@@ -15,7 +15,9 @@ export type AppDispatch = typeof store.dispatch;
 
 export function createStore(preloadedState?: RootState) {
 	return preloadedState ? configureStore({
-		reducer: {},
+		reducer: {
+			counter: counterReducer,
+		},
 		devTools: IS_DEV,
 		preloadedState
 	}) : store;
