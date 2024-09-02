@@ -15,4 +15,7 @@ describe('store/counter/counterSlice', () => {
 		};  
 		expect(counterReducer(store, counterActions.decrement())).toEqual({ value: VALUE - 1 });
 	});
+	test('should works with empty initial state', () => {
+		expect(counterReducer(undefined, counterActions.increment())).toEqual({ value: 1 });
+	});
 });

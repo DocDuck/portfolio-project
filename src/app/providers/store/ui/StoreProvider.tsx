@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
 import { Provider } from "react-redux";
-import { createStore } from "../config";
+import { createStore, RootState } from "../config";
 
 interface IStoreProviderProps {
-  children: ReactNode;
+	children: ReactNode;
+	preloadedState?: RootState;
 }
-export const StoreProvider: React.FC<IStoreProviderProps> = ({ children }) => {
-	const store = createStore();
+export const StoreProvider: React.FC<IStoreProviderProps> = ({ children, preloadedState }) => {
+	const store = createStore(preloadedState);
 	return <Provider store={store}>{ children }</Provider>;
 };

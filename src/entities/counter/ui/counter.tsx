@@ -1,7 +1,7 @@
-import { useAppDispatch, useAppSelector } from "shared/hooks/store";
-import { Button } from "shared/ui/button";
 import { getCounterValue } from "../model/selectors/counterSelectors";
 import { counterActions } from "../model";
+import { useAppDispatch, useAppSelector } from "shared/hooks/store";
+import { Button } from "shared/ui/button";
 
 export const Counter = () => {
 	const dispatch = useAppDispatch();
@@ -15,9 +15,9 @@ export const Counter = () => {
 	};
 	return (
 		<div>
-			<div className="count">{`Count:${count}`}</div>
-			<Button onClick={onIncrement}>+</Button>
-			<Button onClick={onDecrement}>-</Button>
+			<div data-testid="test-counter">{`Count:${count}`}</div>
+			<Button data-testid="test-increment" onClick={onIncrement}>+</Button>
+			<Button data-testid="test-decrement" onClick={onDecrement}>-</Button>
 		</div>
 	);
 };
