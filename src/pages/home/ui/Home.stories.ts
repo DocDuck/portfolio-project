@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Home } from './Home';
+import { StoreDecorator } from 'shared/ui/storybook/StoreDecorator';
 
 const meta = {
 	title: 'pages/Home',
@@ -17,4 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Main: Story = {
 	args: {},
+	decorators: StoreDecorator({
+		counter: {
+			value: 666
+		}
+	})
 };
