@@ -67,14 +67,16 @@ const config: Config = {
 	// globalTeardown: undefined,
 
 	// A set of global variables that need to be available in all test environments
-	// globals: {},
+	globals: {
+		IS_DEV: true
+	},
 
 	// The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
 	// maxWorkers: "50%",
 
 	// An array of directory names to be searched recursively up from the requiring module's location
 	moduleDirectories: [
-		"node_modules"
+		"node_modules",
 	],
 
 	// An array of file extensions your modules use
@@ -93,6 +95,7 @@ const config: Config = {
 	moduleNameMapper: {
 		// '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 		//   '<rootDir>/__mocks__/fileMock.js',
+		"entities/(.*)": '<rootDir>/src/entities/$1', // фиксит абсолютный путь entities в тестах, так как у зависимости такое же название и это вызывает падение теста в котором есть пути до сущностей
 		'\\.(scss|css)$': 'identity-obj-proxy',
 		'\\.(svg)$': '<rootDir>src/shared/ui/emptySvg',
 	},
