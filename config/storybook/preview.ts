@@ -3,23 +3,23 @@ import { RouterDecorator, StyleDecorator, ThemeDecorator } from "shared/ui/story
 import { themeGlobalTypes } from "shared/ui/storybook/ThemeDecorator";
 
 const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
+	parameters: {
+		controls: {
+			matchers: {
+				color: /(background|color)$/i,
+				date: /Date$/i,
+			},
+		},
+	},
 
-  decorators: [
-    ThemeDecorator,
-    StyleDecorator,
-    RouterDecorator
-  ],
+	decorators: [
+		ThemeDecorator,
+		StyleDecorator,
+		RouterDecorator
+	],
 
-  tags: ["autodocs"],
-  globalTypes: themeGlobalTypes
+	tags: ["autodocs"],
+	globalTypes: themeGlobalTypes
 };
 
 export default preview;

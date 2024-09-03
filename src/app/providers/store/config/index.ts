@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from '../../../../entities/counter'; // TODO fix abs path for jest
+import { counterReducer } from 'entities/counter/model';
 
 const store = configureStore({
 	reducer: {

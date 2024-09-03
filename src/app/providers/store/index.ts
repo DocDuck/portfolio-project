@@ -1,2 +1,3 @@
 export { StoreProvider } from './ui';
-export { createStore, RootState, AppDispatch } from './config';
+export { createStore } from './config';
+export type { RootState, AppDispatch } from './config';
