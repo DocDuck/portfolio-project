@@ -1,5 +1,5 @@
 import path from "path";
-import { RuleSetRule } from "webpack";
+import { DefinePlugin, RuleSetRule } from "webpack";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { getCssLoader } from "../loaders/cssLoader";
 import { getSvgLoader } from "../loaders/svgLoader";
@@ -29,13 +29,26 @@ const config: StorybookConfig = {
 		}
 	}),
 	docs: {},
-	// eslint-disable-next-line @typescript-eslint/require-await
-	webpackFinal: async (config) => {
+	webpackFinal: (config) => {
 		if (!config?.resolve) return config;
 		config.resolve.modules = [
 			...(config.resolve.modules ?? []),
 			path.resolve(__dirname, "../../src"),
 		];
+		if (config.resolve.alias) {
+			config.resolve.alias = {
+				...config.resolve.alias,
+				"app": path.resolve(__dirname, "../../src/app"),
+				"entities": path.resolve(__dirname, "../../src/entities"),
+				"features": path.resolve(__dirname, "../../src/features"),
+				"pages": path.resolve(__dirname, "../../src/pages"),
+				"shared": path.resolve(__dirname, "../../src/shared"),
+				"widgets": path.resolve(__dirname, "../../src/widgets"),
+			};
+		}
+		config.plugins!.push(new DefinePlugin({
+			IS_DEV: JSON.stringify(true),
+		}));
 		const rules = config?.module?.rules ?? [];
 		const pathToInlineSvg = path.resolve(__dirname, '../../src/shared/assets/icons');
 		// modify storybook's file-loader rule to avoid conflicts with svgr
