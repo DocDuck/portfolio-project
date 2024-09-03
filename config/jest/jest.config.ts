@@ -76,7 +76,7 @@ const config: Config = {
 
 	// An array of directory names to be searched recursively up from the requiring module's location
 	moduleDirectories: [
-		"node_modules"
+		"node_modules",
 	],
 
 	// An array of file extensions your modules use
@@ -95,6 +95,7 @@ const config: Config = {
 	moduleNameMapper: {
 		// '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 		//   '<rootDir>/__mocks__/fileMock.js',
+		"entities/(.*)": '<rootDir>/src/entities/$1', // фиксит абсолютный путь entities в тестах, так как у зависимости такое же название и это вызывает падение теста в котором есть пути до сущностей
 		'\\.(scss|css)$': 'identity-obj-proxy',
 		'\\.(svg)$': '<rootDir>src/shared/ui/emptySvg',
 	},
