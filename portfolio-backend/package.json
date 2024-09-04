@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-project-frontend",
+  "version": "1.0.0",
+  "description": "all backend stack is here!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DocDuck/portfolio-project.git"
+  },
+  "author": "Aleksandr Mitin <alex.mitin.psmu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DocDuck/portfolio-project/issues"
+  },
+  "homepage": "https://github.com/DocDuck/portfolio-project#readme"
+}

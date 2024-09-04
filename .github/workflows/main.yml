@@ -5,12 +5,14 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  pipeline:
+  frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio-backend
     strategy:
       matrix:
         node-version: [ 20.11.1 ]
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

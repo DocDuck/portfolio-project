@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio_project=self.webpackChunkportfolio_project||[]).push([[33],{33:(e,o,r)=>{r.r(o),r.d(o,{Home:()=>p,default:()=>s});var t=r(848),c=r(389),p=function(){var e=(0,c.Bd)("home").t;return(0,t.jsx)("div",{children:e("Главная")})};p.displayName="Home";const s=p}}]);
