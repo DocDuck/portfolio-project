@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: portfolio-backend
+        working-directory: portfolio-frontend
     strategy:
       matrix:
         node-version: [ 20.11.1 ]
