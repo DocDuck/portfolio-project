@@ -43,6 +43,8 @@ table {
 input {
   appearance: none;
   border-radius: 0;
+  border: none;
+  outline: none;
 }
 
 button, input[type="submit"], input[type="reset"] {
