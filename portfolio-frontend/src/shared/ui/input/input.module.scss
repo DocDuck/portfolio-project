@@ -1,0 +1,14 @@
+.inputWrapper {
+    position: relative;
+    display: flex;
+    padding: var(--button-pading-s);;
+}
+.input {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: var(--button-border-radius);
+    color: initial;
+}
+.cursor {
+    color: initial;
+}
