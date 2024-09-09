@@ -1,14 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.placeholder {
+    height: 100%;
+    margin-right: var(--size-xs);
+}
 .inputWrapper {
     position: relative;
     display: flex;
-    padding: var(--button-pading-s);;
+    height: 100%;
 }
 .input {
+    height: 100%;
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: var(--button-border-radius);
-    color: initial;
+    color: transparent;
+    text-shadow: 0 0 0 var(--button-color);
+    padding: var(--button-pading-s);
+    &.grow {
+        flex-grow: 1;
+    }
 }
-.cursor {
-    color: initial;
+.carret {
+    position: absolute;
+    left: var(--padding-s);
+    bottom: var(--padding-xs);
+    height:2px;
+    width: 9px;
+    background: var(--button-color);
+    animation: blink .7s ease-in-out infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .03;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: .03;
+    }
+    100% {
+        opacity: 0;
+    }
 }

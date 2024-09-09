@@ -7,9 +7,11 @@ export const LoginForm: React.FC = () => {
 	const { t } = useTranslation();
 	return (
 		<div className={s.loginForm}>
-			<Input type='text' className={s.input} />
-			<Input type='text' className={s.input} />
-			<Button className={s.button}>{t('Войти')}</Button>
+			<Input type='text' placeholder='Введите логин' className={s.input} />
+			<Input type='password' placeholder='Введите пароль' className={s.input} />
+			<Button size='m' className={s.button}>
+				{t('Войти')}
+			</Button>
 		</div>
 	);
 };
