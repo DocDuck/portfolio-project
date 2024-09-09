@@ -3,11 +3,11 @@ import { Counter } from "./counter";
 import { RootState } from "app/providers/store";
 import { renderForTests } from "shared/lib/tests";
 
-const preloadedState: RootState = {
+const preloadedState = {
 	counter: {
 		value: 10
 	}
-};
+} as RootState;
 describe('Counter', () => {
 	test('increment', () => {
 		renderForTests(<Counter />, { preloadedState });

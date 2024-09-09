@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Home } from './Home';
 import { StoreDecorator } from 'shared/ui/storybook/StoreDecorator';
+import { RootState } from 'app/providers/store';
 
 const meta = {
 	title: 'pages/Home',
@@ -22,5 +23,5 @@ export const Main: Story = {
 		counter: {
 			value: 666
 		}
-	})
+	} as RootState)
 };

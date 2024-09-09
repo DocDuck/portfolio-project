@@ -1,0 +1,21 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+} 
+
+.input {
+  display: flex;
+  gap: var(--padding-m);
+
+  & + & {
+    margin-top: var(--padding-m);
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: center;
+  margin-top: var(--padding-m);
+}

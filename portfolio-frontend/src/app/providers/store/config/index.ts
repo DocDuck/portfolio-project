@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/counter';
+import { userReducer } from 'entities/user';
+
+const reducer = {
+	counter: counterReducer,
+	user: userReducer,
+};
 
 const store = configureStore({
-	reducer: {
-		counter: counterReducer,
-	},
+	reducer,
 	devTools: IS_DEV,
 });
 
@@ -15,9 +19,7 @@ export type AppDispatch = typeof store.dispatch;
 
 export function createStore(preloadedState?: RootState) {
 	return preloadedState ? configureStore({
-		reducer: {
-			counter: counterReducer,
-		},
+		reducer,
 		devTools: IS_DEV,
 		preloadedState
 	}) : store;
