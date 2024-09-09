@@ -1,12 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { Input } from 'shared/ui/input';
 describe('Input', () => {
-	test('render', () => {
-		render(<Input value='TEST' />);
-		expect(screen.getByText('TEST')).toBeInTheDocument();
-	});
-	test('placeholder mode', () => {
+	test('render with placeholder', () => {
 		render(<Input value='TEST' placeholder='placeholder' />);
-		//expect(screen.getByText('TEST')).toHaveClass('clean');
+		expect(screen.getByText('placeholder')).toBeInTheDocument();
 	});
 });

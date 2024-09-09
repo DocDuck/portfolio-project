@@ -45,6 +45,10 @@ input {
   border-radius: 0;
   border: none;
   outline: none;
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 
 button, input[type="submit"], input[type="reset"] {
