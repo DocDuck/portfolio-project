@@ -11,7 +11,11 @@ interface IProps {
 
 export const LoginModal: React.FC<IProps> = ({ className = '', ...rest }) => {
 	return (
-		<Modal className={cn(s.loginModal, { [className]: !!className })} {...rest}>
+		<Modal
+			isLazy={true}
+			className={cn(s.loginModal, { [className]: !!className })}
+			{...rest}
+		>
 			<LoginForm />
 		</Modal>
 	);
