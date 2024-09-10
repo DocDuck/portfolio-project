@@ -23,8 +23,7 @@
     "test:loki:ci": "loki --requireReference --reactUri file:$PWD/storybook-static",
     "test:loki:json": "node scripts/generateLokiReport.mjs",
     "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:loki:report": "npm run test:loki:json && npm run test:loki:html",
-    "prepare": "cd .. && husky portfolio-frontend/.husky"
+    "test:loki:report": "npm run test:loki:json && npm run test:loki:html"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.4",
