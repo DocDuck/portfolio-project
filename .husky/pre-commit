@@ -1,0 +1,3 @@
+cd portfolio-frontend
+npm run lint:ts
+npm run test:jest
