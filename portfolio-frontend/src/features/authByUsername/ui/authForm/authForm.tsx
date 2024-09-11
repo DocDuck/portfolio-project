@@ -15,6 +15,8 @@ export const AuthForm: React.FC = memo(() => {
 	const dispatch = useAppDispatch();
 	const username = useAppSelector(authByUsernameSelectors.getAuthUsername);
 	const password = useAppSelector(authByUsernameSelectors.getAuthPassword);
+	const isLoading = useAppSelector(authByUsernameSelectors.getAuthIsLoading);
+	const error = useAppSelector(authByUsernameSelectors.getAuthError);
 	const onChangeUsername = useCallback(
 		(value: string) => {
 			dispatch(authByUsernameActions.setUsername(value));
@@ -34,6 +36,11 @@ export const AuthForm: React.FC = memo(() => {
 	}, [dispatch, password, username]);
 	return (
 		<div className={s.authForm}>
+			{error && (
+				<div style={{ color: 'red' }} className='error'>
+					{error}
+				</div>
+			)}
 			<Input
 				autofocus={true}
 				type='text'
@@ -49,7 +56,12 @@ export const AuthForm: React.FC = memo(() => {
 				onChange={onChangePassword}
 				value={password}
 			/>
-			<Button size='m' className={s.button} onClick={onAuthClick}>
+			<Button
+				disabled={isLoading}
+				size='m'
+				className={s.button}
+				onClick={onAuthClick}
+			>
 				{t('Войти')}
 			</Button>
 		</div>
