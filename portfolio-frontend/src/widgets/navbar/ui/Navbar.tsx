@@ -3,7 +3,7 @@ import s from './navbar.module.scss';
 import { Button } from 'shared/ui/button';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features/authByUsername';
+import { AuthModal } from 'features/authByUsername';
 
 interface IProps {
 	className?: string;
@@ -20,7 +20,7 @@ export const Navbar: React.FC<IProps> = ({ className = '' }) => {
 	return (
 		<div className={cn(s.navbar, { [className]: !!className })}>
 			<Button onClick={onModalOpen}>{t('Войти')}</Button>
-			<LoginModal isOpen={isModelOpen} onClose={onModalClose} />
+			<AuthModal isOpen={isModelOpen} onClose={onModalClose} />
 		</div>
 	);
 };
