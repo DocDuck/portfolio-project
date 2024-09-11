@@ -6,7 +6,7 @@ interface IAuthByUsernameThunkProps {
   username: string;
   password: string;
 }
-export const authByUsernameThunk = createAsyncThunk<IUser, IAuthByUsernameThunkProps>(
+export const authByUsernameThunk = createAsyncThunk<IUser, IAuthByUsernameThunkProps, { rejectValue: string }>(
 	'auth/authByUsername',
 	async (authData, thunkApi) => {
 		try {
