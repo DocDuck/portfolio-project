@@ -86,3 +86,12 @@ export const FilledL: Story = {
 		children: 'FILLED BTN'
 	},
 };
+
+export const Disabled: Story = {
+	args: {
+		size: 'l',
+		mode: 'filled',
+		isDisabled: true,
+		children: 'DISABLED',
+	},
+};
