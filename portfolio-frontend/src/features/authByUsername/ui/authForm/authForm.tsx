@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button';
 import { Input } from 'shared/ui/input';
-import s from './loginForm.module.scss';
+import s from './authForm.module.scss';
 
-export const LoginForm: React.FC = () => {
+export const AuthForm: React.FC = () => {
 	const { t } = useTranslation();
 	return (
-		<div className={s.loginForm}>
+		<div className={s.authForm}>
 			<Input
 				autofocus={true}
 				type='text'
@@ -20,4 +20,4 @@ export const LoginForm: React.FC = () => {
 		</div>
 	);
 };
-LoginForm.displayName = 'LoginForm';
+AuthForm.displayName = 'AuthForm';
