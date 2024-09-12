@@ -5,9 +5,10 @@ import {
 	authByUsernameActions,
 	authByUsernameThunks,
 } from 'features/authByUsername';
+import { useAppDispatch, useAppSelector } from 'shared/hooks/store';
 import { Button } from 'shared/ui/button';
 import { Input } from 'shared/ui/input';
-import { useAppDispatch, useAppSelector } from 'shared/hooks/store';
+import { Typography } from 'shared/ui/typography';
 import s from './authForm.module.scss';
 
 export const AuthForm: React.FC = memo(() => {
@@ -37,9 +38,9 @@ export const AuthForm: React.FC = memo(() => {
 	return (
 		<div className={s.authForm}>
 			{error && (
-				<div style={{ color: 'red' }} className='error'>
+				<Typography marginBottom='12px' mode='error' tag='p'>
 					{error}
-				</div>
+				</Typography>
 			)}
 			<Input
 				autofocus={true}
