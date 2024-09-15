@@ -39,11 +39,11 @@ export const Error: Story = {
 };
 
 // TODO понять почему локи тест падает
-// export const Loading: Story = {
-// 	args: {},
-// 	decorators: StoreDecorator({
-// 		authByUsername: {
-// 			isLoading: true
-// 		}
-// 	} as RootState)
-// };
+export const Loading: Story = {
+	args: {},
+	decorators: StoreDecorator({
+		authByUsername: {
+			isLoading: true
+		}
+	} as RootState)
+};
