@@ -58,10 +58,10 @@ export const AuthForm: React.FC = memo(() => {
 				value={password}
 			/>
 			<Button
-				disabled={isLoading}
 				size='m'
 				className={s.button}
 				onClick={onAuthClick}
+				isDisabled={isLoading}
 			>
 				{t('Войти')}
 			</Button>
