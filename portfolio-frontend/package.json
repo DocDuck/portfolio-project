@@ -20,7 +20,7 @@
     "test:loki": "loki test --config ./config/storybook",
     "test:loki:update": "loki update --config ./config/storybook",
     "test:loki:approve": "loki approve --diffOnly --config ./config/storybook",
-    "test:loki:ci": "loki --requireReference --reactUri file:$PWD/storybook-static",
+    "test:loki:ci": "loki --config ./config/storybook --requireReference --reactUri file:$PWD/storybook-static",
     "test:loki:json": "node scripts/generateLokiReport.mjs",
     "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:loki:report": "npm run test:loki:json && npm run test:loki:html"
