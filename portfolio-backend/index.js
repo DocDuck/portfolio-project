@@ -54,7 +54,6 @@ app.post('/auth', async (req, res) => {
   try {
     const { username, password } = req.body;
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
-    console.log('db', db)
     const { users = [] } = db;
 
     // Авторизация пользователя
@@ -69,9 +68,9 @@ app.post('/auth', async (req, res) => {
       return res.status(403).json({ message: 'User not found' });
     }
     // Генерация токена
-    const token = jwt.sign({ username, password }, secretKey, { expiresIn: '7d' });
+    const token = jwt.sign(userFromBd, secretKey, { expiresIn: '7d' });
 
-    return res.status(200).json({ ...userFromBd, token });
+    return res.status(200).json(token);
   } catch (e) {
     console.log(e);
     return res.status(500).json({ message: e.message });
@@ -82,25 +81,20 @@ app.post('/auth', async (req, res) => {
 function verifyToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
-
-  // Если токена нет - ничего не делаем
   if (token == null) {
-    next();
+    return res.status(403).json({ message: 'Токен не создан' });
   }
-
-  jwt.verify(token, secretKey, (err, decoded) => {
-    // Если токен не валидный - тоже ничего не делаем
+  jwt.verify(token, secretKey, (err, user) => {
     if (err) {
-      next();
+      return res.status(403).json({ message: 'Токен не валидный, требуется авторизация' });
     }
-    req.decoded = decoded;
-    // Если токен ок - отдаем юзера
-    return res.status(200).json(decoded);
+    req.user = user;
+    next();
   });
 }
 // Роут для авторизации по токену
-app.get('/authByToken', verifyToken, async (_, res) => {
-  res.status(403).send({ message: 'Токен не валидный, требуется авторизация' });
+app.get('/authByToken', verifyToken, async (req, res) => {
+    return res.status(200).json(req.user);
 });
 
 app.listen(port, () => {

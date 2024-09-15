@@ -20,9 +20,11 @@ export const authByUsernameSlice = createSlice({
 		setPassword: (state, { payload }: PayloadAction<IAuthByUsernameState['password']>) => {
 			state.password = payload;
 		},
-		setIsLoading: (state, { payload }: PayloadAction<IAuthByUsernameState['isLoading']>) => {
-			state.isLoading = payload;
-		},
+		clear: (state) => {
+			state.username = '';
+			state.password = '';
+			state.error = undefined;
+		}
 	},
 	extraReducers: (builder) => {
 		builder
@@ -30,10 +32,10 @@ export const authByUsernameSlice = createSlice({
 				state.isLoading = true;
 				state.error = undefined;
 				state.username = '';
+				state.password = '';
 			})
-			.addCase(authByUsernameThunk.fulfilled, (state, action) => {
+			.addCase(authByUsernameThunk.fulfilled, (state) => {
 				state.isLoading = false;
-				state.username = action.payload.username;
 			})
 			.addCase(authByUsernameThunk.rejected, (state, action) => {
 				state.isLoading = false;

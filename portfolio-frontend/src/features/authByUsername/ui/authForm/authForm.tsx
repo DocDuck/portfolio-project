@@ -4,7 +4,7 @@ import {
 	authByUsernameSelectors,
 	authByUsernameActions,
 	authByUsernameThunks,
-} from 'features/authByUsername';
+} from '../../model';
 import { useAppDispatch, useAppSelector } from 'shared/hooks/store';
 import { Button } from 'shared/ui/button';
 import { Input } from 'shared/ui/input';

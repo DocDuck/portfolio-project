@@ -1,5 +1,5 @@
 import { cn } from 'shared/lib/classNames';
-import { AuthForm } from '..';
+import { AuthForm } from '../authForm/authForm';
 import s from './authModal.module.scss';
 import { Modal } from 'shared/ui/modal';
 
