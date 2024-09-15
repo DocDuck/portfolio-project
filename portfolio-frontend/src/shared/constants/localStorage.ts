@@ -1,0 +1,1 @@
+export const LS_AUTH_USER_KEY = 'LS_AUTH_USER_KEY';

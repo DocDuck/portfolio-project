@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/counter';
 import { userReducer } from 'entities/user';
+import { authByUsernameReducer } from 'features/authByUsername/model/slice/authByUsernameSlice';
 
 const reducer = {
 	counter: counterReducer,
 	user: userReducer,
+	authByUsername: authByUsernameReducer,
 };
 
 const store = configureStore({

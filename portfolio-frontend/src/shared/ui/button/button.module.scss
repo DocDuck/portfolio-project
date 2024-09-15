@@ -8,7 +8,10 @@
         color: var(--button-text-hover);
     }
 }
-
+.disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
 // modes
 .clean {
     color: var(--button-color);

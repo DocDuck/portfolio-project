@@ -1,1 +1,2 @@
-export { LoginModal } from './ui/loginModal/loginModal';
+export { authByUsernameReducer } from './model';
+export { AuthModal } from './ui';
