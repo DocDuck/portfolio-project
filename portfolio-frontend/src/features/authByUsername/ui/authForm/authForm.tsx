@@ -69,3 +69,5 @@ export const AuthForm: React.FC = memo(() => {
 	);
 });
 AuthForm.displayName = 'AuthForm';
+
+export default AuthForm;

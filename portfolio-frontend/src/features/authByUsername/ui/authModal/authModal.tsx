@@ -1,7 +1,9 @@
+import { Suspense } from 'react';
 import { cn } from 'shared/lib/classNames';
-import { AuthForm } from '../authForm/authForm';
-import s from './authModal.module.scss';
 import { Modal } from 'shared/ui/modal';
+import { PageLoader } from 'widgets/pageLoader';
+import { AuthForm } from '../authForm/authForm.lazy';
+import s from './authModal.module.scss';
 
 interface IProps {
 	isOpen: boolean;
@@ -16,7 +18,9 @@ export const AuthModal: React.FC<IProps> = ({ className = '', ...rest }) => {
 			className={cn(s.authModal, { [className]: !!className })}
 			{...rest}
 		>
-			<AuthForm />
+			<Suspense fallback={<PageLoader />}>
+				<AuthForm />
+			</Suspense>
 		</Modal>
 	);
 };
