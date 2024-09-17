@@ -1,7 +1,10 @@
-import { RootState } from "app/providers/store";
+import { rootReducer } from "app/providers/store";
+import { authByUsernameSlice } from "../slice/authByUsernameSlice";
 
-export const getAuthByUsernameData = (state: RootState) => state.authByUsername;
-export const getAuthUsername = (state: RootState) => state.authByUsername.username;
-export const getAuthPassword= (state: RootState) => state.authByUsername.password;
-export const getAuthIsLoading= (state: RootState) => state.authByUsername.isLoading;
-export const getAuthError= (state: RootState) => state.authByUsername.error;
+const withAuthByUsernameSlice = rootReducer.inject(authByUsernameSlice);
+
+export const getAuthByUsernameData = withAuthByUsernameSlice.selector(state => state.authByUsername);
+export const getAuthUsername = withAuthByUsernameSlice.selector((state) => state.authByUsername.username);
+export const getAuthPassword= withAuthByUsernameSlice.selector((state) => state.authByUsername.password);
+export const getAuthIsLoading= withAuthByUsernameSlice.selector((state) => state.authByUsername.isLoading);
+export const getAuthError = withAuthByUsernameSlice.selector((state) => state.authByUsername.error);

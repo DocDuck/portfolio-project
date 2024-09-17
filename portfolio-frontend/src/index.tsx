@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { App } from 'app/ui';
+import { App } from 'app';
 import { ErrorBoundary, StoreProvider, ThemeProvider } from 'app/providers';
 import { PageError } from 'widgets/pageError';
-import { PageLoader } from 'widgets/pageLoader/ui';
+import { PageLoader } from 'widgets/pageLoader';
 import 'shared/config/i18n';
 import 'app/ui/styles/index.scss';
 
@@ -12,11 +12,13 @@ const root = createRoot(document.getElementById('root')!);
 root.render(
 	<StoreProvider>
 		<Router>
-			<ErrorBoundary fallback={(
-				<Suspense fallback={<PageLoader />}>
-					<PageError />
-				</Suspense>
-			)}>
+			<ErrorBoundary
+				fallback={
+					<Suspense fallback={<PageLoader />}>
+						<PageError />
+					</Suspense>
+				}
+			>
 				<ThemeProvider>
 					<App />
 				</ThemeProvider>

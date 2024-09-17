@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction, WithSlice } from '@reduxjs/toolkit';
+import { rootReducer } from '../../../../app/providers/store';
 import type { IAuthByUsernameState } from '../types/authByUsername';
 import { authByUsernameThunk } from '../thunks/authByUsernameThunks';
 
@@ -44,8 +45,14 @@ export const authByUsernameSlice = createSlice({
 	},
 });
 
-// Action creators are generated for each case reducer function
+declare module '../../../../app/providers/store' {
+  // WithSlice utility assumes reducer is under slice.reducerPath
+  export type LazyLoadedSlices = WithSlice<typeof authByUsernameSlice>
+}
+
+const injectedAuthByUsernameSlice = authByUsernameSlice.injectInto(rootReducer);
+
 export const {
 	actions: authByUsernameActions,
 	reducer: authByUsernameReducer
-} = authByUsernameSlice;
+} = injectedAuthByUsernameSlice;

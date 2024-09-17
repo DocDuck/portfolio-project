@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AuthForm } from './authForm';
 import { StoreDecorator } from 'shared/ui/storybook/StoreDecorator';
-import { RootState } from 'app/providers/store';
+import { LazyLoadedSlices, RootState } from 'app/providers/store';
 
 const meta = {
 	title: 'feature/AuthForm',
@@ -26,7 +26,7 @@ export const Main: Story = {
 			username: 'Test',
 			password: 'Test'
 		}
-	} as RootState)
+	} as RootState & LazyLoadedSlices)
 };
 
 export const Error: Story = {
@@ -35,7 +35,7 @@ export const Error: Story = {
 		authByUsername: {
 			error: 'Test Error'
 		}
-	} as RootState)
+	} as RootState & LazyLoadedSlices)
 };
 
 // TODO понять почему локи тест падает

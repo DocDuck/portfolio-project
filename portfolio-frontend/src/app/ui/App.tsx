@@ -1,8 +1,8 @@
 import { Suspense, useEffect } from 'react';
 import { Router } from 'app/providers';
 import { userThunks } from 'entities/user';
-import { Navbar } from 'widgets/navbar/ui';
-import { Sidebar } from 'widgets/sidebar/ui';
+import { Navbar } from 'widgets/navbar';
+import { Sidebar } from 'widgets/sidebar';
 import { cn } from 'shared/lib/classNames';
 import { useTheme } from 'shared/theme';
 import { useAppDispatch } from 'shared/hooks/store';
