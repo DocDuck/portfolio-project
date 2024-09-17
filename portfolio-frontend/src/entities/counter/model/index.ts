@@ -1,1 +1,1 @@
-export { counterActions, counterReducer } from './slice/counterSlice';
+export { counterActions, counterSlice } from './slice/counterSlice';

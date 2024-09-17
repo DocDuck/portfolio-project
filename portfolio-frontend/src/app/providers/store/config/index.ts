@@ -1,13 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/counter';
-import { userReducer } from 'entities/user';
-import { authByUsernameReducer } from 'features/authByUsername/model/slice/authByUsernameSlice';
+import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import { counterSlice } from 'entities/counter';
+import { userSlice } from 'entities/user';
 
-const reducer = {
-	counter: counterReducer,
-	user: userReducer,
-	authByUsername: authByUsernameReducer,
-};
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface LazyLoadedSlices {}
+
+export const reducer =
+	combineSlices(
+		counterSlice,
+		userSlice,
+	).withLazyLoadedSlices<LazyLoadedSlices>();
 
 const store = configureStore({
 	reducer,
