@@ -1,3 +1,3 @@
 import { RootState } from "app/providers/store";
 
-export const getCounterValue = (state: RootState) => state.counter.value;
+export const getCounterValue = (state: RootState) => state.counter?.value;
