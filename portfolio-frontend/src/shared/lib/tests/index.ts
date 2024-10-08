@@ -1,1 +1,2 @@
-export { renderForTests } from './renderForTests';
+export { testRender } from './testRender';
+export { TestThunk } from './testThunk';
