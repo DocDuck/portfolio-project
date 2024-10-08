@@ -19,7 +19,6 @@ const USER_DATA: IUser = {
 };
 
 describe('AuthByUsername/authByUsernameThunk', () => {
-
 	test('success', async() => {
 		// Подменяем значение post метода в аксиосе, который отдает jwt
 		axiosMock.post.mockReturnValue(Promise.resolve({ data: TOKEN }));
