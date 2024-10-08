@@ -4,7 +4,7 @@ import { rootReducer } from '../../../../app/providers/store';
 import type { IAuthByUsernameState } from '../types/authByUsername';
 import { authByUsernameThunk } from '../thunks/authByUsernameThunks';
 
-const initialState: IAuthByUsernameState = {
+export const initialState: IAuthByUsernameState = {
 	isLoading: false,
 	password: '',
 	username: '',
